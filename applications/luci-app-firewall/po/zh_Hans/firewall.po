@@ -292,9 +292,6 @@ msgstr "丢弃无效数据包"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:182
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:230
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:164
-msgid "Enable FullCone-NAT"
-msgstr "启用 FullCone-NAT"
-
 msgid "Enable"
 msgstr "启用"
 
@@ -305,6 +302,12 @@ msgstr "启用 NAT 环回"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:44
 msgid "Enable SYN-flood protection"
 msgstr "启用 SYN-flood 防御"
+
+msgid "Enable FullCone NAT"
+msgstr "启用 FullCone NAT"
+
+msgid "Enable FullCone NAT6"
+msgstr "启用 FullCone NAT6"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:264
 msgid "Enable logging on this zone"
@@ -466,6 +469,10 @@ msgstr "授予访问防火墙配置的权限"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:87
 msgid "Hardware flow offloading"
 msgstr "硬件流量分载"
+
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:112
+msgid "MTK Hardware flow offloading"
+msgstr "MTK 硬件流量分载"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:279
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:232
@@ -761,6 +768,10 @@ msgstr "重定向匹配的入站流量到指定的内部主机"
 msgid "Requires hardware NAT support. Implemented at least for mt7621"
 msgstr "需要硬件 NAT 支持。目前 mt7621 已实现"
 
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:113
+msgid "Requires MTK hardware NAT support. Implemented at least for mtk-ramips"
+msgstr "需要 MTK 硬件 NAT 支持。目前 mtk-ramips 已实现"
+
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:244
 msgid "Restrict Masquerading to given destination subnets"
 msgstr "要限制 IP 动态伪装的目标子网"
@@ -794,6 +805,10 @@ msgstr "重写端口"
 msgid "Routing/NAT Offloading"
 msgstr "路由/NAT 分载"
 
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:100
+msgid "MTK/HNAT Offloading"
+msgstr "MTK/HNAT 分载"
+
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:211
 msgid "SNAT - Rewrite to specific source IP or port"
 msgstr "SNAT - 重写为特定的源 IP 或端口"
@@ -822,6 +837,14 @@ msgstr "基于软件的 路由/NAT 分载"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:82
 msgid "Software flow offloading"
 msgstr "软件流量分载"
+
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:108
+msgid "Software based mtk offloading for routing/NAT"
+msgstr "基于 mtk 软件的 路由/NAT 分载"
+
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:107
+msgid "MTK Software flow offloading"
+msgstr "MTK 软件流量分载"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:202
 msgid "Source IP address"

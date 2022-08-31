@@ -1802,6 +1802,25 @@ msgstr "当前工作日"
 msgid "Custom Interface"
 msgstr "自定义接口"
 
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:259
+msgid "custom_domain"
+msgstr "自定义域名"
+
+msgid "Custom Redirect Domain"
+msgstr "‎自定义挟持域名"
+
+msgid "Comments"
+msgstr "备注"
+
+msgid "Define a custom domain name and the corresponding PTR record"
+msgstr "自定义域名对应的IP地址 (需要客户端DNS指向本路由)"
+
+msgid "Domain Name"
+msgstr "域名 (不带HTTPS://)"
+
+msgid "-Address"
+msgstr "-地址"
+
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:410
 msgid ""
 "Custom files (certificates, scripts) may remain on the system. To prevent "
@@ -4756,6 +4775,9 @@ msgstr "MAC"
 msgid "MAC Address"
 msgstr "MAC 地址"
 
+msgid "Override default MAC address - the range of usable addresses might be limited by the driver"
+msgstr "‎覆盖默认 MAC 地址 - 可用地址的范围可能受驱动程序限制‎"
+
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1084
 msgid "MAC Address Filter"
 msgstr "MAC 地址过滤"
@@ -6136,6 +6158,9 @@ msgid "Paste or drag WireGuard peer configuration (wg0.conf) file…"
 msgstr "粘贴或拖动 WireGuard peer 配置 (wg0.conf) 文件…"
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:417
+msgid "Paste or drag WireGuard configuration file…"
+msgstr "粘贴或拖动 WireGuard 配置文件…"
+
 msgid ""
 "Paste or drag a WireGuard configuration (commonly <em>wg0.conf</em>) from "
 "another system below to create a matching peer entry allowing that system to "

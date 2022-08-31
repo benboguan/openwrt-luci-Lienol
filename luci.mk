@@ -12,7 +12,7 @@ LUCI_DEFAULTS:=$(notdir $(wildcard ${CURDIR}/root/etc/uci-defaults/*))
 LUCI_PKGARCH?=$(if $(realpath src/Makefile),,all)
 LUCI_SECTION?=luci
 LUCI_CATEGORY?=LuCI
-LUCI_URL?=https://github.com/lienol/openwrt-luci
+LUCI_URL?=https://github.com/openwrt/luci
 LUCI_MAINTAINER?=OpenWrt LuCI community
 LUCI_MINIFY_LUA?=1
 LUCI_MINIFY_CSS?=1
@@ -86,7 +86,7 @@ define findrev
       if [ -n "$$1" ]; then
         secs="$$(($$1 % 86400))"; \
         yday="$$(date --utc --date="@$$1" "+%y.%j")"; \
-        printf 'git-%s' "$$2"; \
+        printf 'git-%s.%05d-%s' "$$yday" "$$secs" "$$2"; \
       else \
         echo "unknown"; \
       fi; \
@@ -117,9 +117,10 @@ PKG_SRC_VERSION?=$(if $(DUMP),x,$(strip $(call findrev,1)))
 PKG_GITBRANCH?=$(if $(DUMP),x,$(strip $(shell \
 	variant="LuCI"; \
 	if git log -1 >/dev/null 2>/dev/null; then \
-		branch="Master"; \
+		branch="$$(git branch --remote --verbose --no-abbrev --contains 2>/dev/null | \
+			sed -rne 's|^[^/]+/([^ ]+) [a-f0-9]{40} .+$$|\1|p' | head -n1)"; \
 		if [ "$$branch" != "master" ]; then \
-			variant="LuCI $$branch"; \
+			variant="LuCI $$branch branch"; \
 		else \
 			variant="LuCI Master"; \
 		fi; \
