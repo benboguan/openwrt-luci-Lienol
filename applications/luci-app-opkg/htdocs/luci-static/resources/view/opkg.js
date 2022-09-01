@@ -184,7 +184,7 @@ function parseList(s, dest)
 			val = RegExp.$2.trim();
 		}
 		else if (pkg) {
-			dest.pkgs[pkg.name] = pkg;
+			dest.pkgs[pkg.name] = dest.pkgs[pkg.name] ? dest.pkgs[pkg.name] : pkg;
 
 			var provides = dest.providers[pkg.name] ? [] : [ pkg.name ];
 
@@ -248,7 +248,7 @@ function display(pattern)
 			var avail = packages.available.pkgs[name],
 			    inst  = packages.installed.pkgs[name];
 
-			if (!inst || !inst.installed)
+			if (!inst || !inst.installed || pkg.name.includes('kmod-') || pkg.name.includes('busybox') || pkg.name.includes('base-files'))
 				continue;
 
 			if (!avail || compareVersion(avail.version, pkg.version) <= 0)
@@ -392,6 +392,12 @@ function handleMode(ev)
 	tab.classList.add('cbi-tab');
 
 	currentDisplayMode = tab.getAttribute('data-mode');
+
+	if (currentDisplayMode == "updates"){
+	var filterv = document.querySelector('input[name="filter"]')
+	if ( filterv.value == "luci-app-")
+		filterv.value = ""
+	}
 
 	display(document.querySelector('input[name="filter"]').value);
 
@@ -985,6 +991,10 @@ function handleOpkg(ev)
 		]);
 
 		var argv = [ cmd, '--force-removal-of-dependent-packages' ];
+		
+		argv.push('--force-checksum');
+		
+		argv.push('--force-depends');
 
 		if (rem && rem.checked)
 			argv.push('--autoremove');
@@ -1138,7 +1148,7 @@ return view.extend({
 				E('div', {}, [
 					E('label', {}, _('Filter') + ':'),
 					E('span', { 'class': 'control-group' }, [
-						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': query, 'input': handleInput }),
+						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': 'luci-app-', 'input': handleInput }),
 						E('button', { 'class': 'btn cbi-button', 'click': handleReset }, [ _('Clear') ])
 					])
 				]),
@@ -1155,6 +1165,7 @@ return view.extend({
 					E('label', {}, _('Actions') + ':'), ' ',
 					E('span', { 'class': 'control-group' }, [
 						E('button', { 'class': 'btn cbi-button-positive', 'data-command': 'update', 'click': handleOpkg, 'disabled': isReadonlyView }, [ _('Update lists…') ]), ' ',
+						E('button', { 'class': 'btn cbi-button-negative', 'data-command': 'upgradeall', 'click': handleOpkg, 'disabled': isReadonlyView }, [ _('Upgrade all…') ]), ' ',
 						E('button', { 'class': 'btn cbi-button-action', 'click': handleUpload, 'disabled': isReadonlyView }, [ _('Upload Package…') ]), ' ',
 						E('button', { 'class': 'btn cbi-button-neutral', 'click': handleConfig }, [ _('Configure opkg…') ])
 					])
@@ -1231,7 +1242,7 @@ return view.extend({
 			]),
 
 			E('div', { 'class': 'controls', 'style': 'display:none' }, [
-				E('div', { 'class': 'pager center' }, [
+				E('div', { 'id': 'pager', 'class': 'center' }, [
 					E('button', { 'class': 'btn cbi-button-neutral prev', 'aria-label': _('Previous page'), 'click': handlePage }, [ '«' ]),
 					E('div', { 'class': 'text' }, [ 'dummy' ]),
 					E('button', { 'class': 'btn cbi-button-neutral next', 'aria-label': _('Next page'), 'click': handlePage }, [ '»' ])
