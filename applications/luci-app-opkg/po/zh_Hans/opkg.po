@@ -332,6 +332,9 @@ msgstr "无法保存 %s：%s"
 msgid "Update lists…"
 msgstr "更新列表…"
 
+msgid "Upgrade all…"
+msgstr "全部更新…"
+
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1212
 msgid "Updates"
 msgstr "更新"
