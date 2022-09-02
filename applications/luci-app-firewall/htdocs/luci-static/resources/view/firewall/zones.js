@@ -79,7 +79,7 @@ return view.extend({
 
 		/* Netfilter flow offload support */
 
-		/*if (L.hasSystemFeature('offloading')) {
+		if (L.hasSystemFeature('offloading')) {
 			s = m.section(form.TypedSection, 'defaults', _('Routing/NAT Offloading'),
 				_('Experimental feature. Not fully compatible with QoS/SQM.'));
 
@@ -96,7 +96,7 @@ return view.extend({
 				_('Requires hardware NAT support. Implemented at least for mt7621'));
 			o.optional = true;
 			o.depends('flow_offloading', '1');
-		}*/
+		}
 
 		/* MTK hnat support */
 
@@ -116,7 +116,7 @@ return view.extend({
 				_('MTK Hardware flow offloading'),
 				_('Requires MTK hardware NAT support. Implemented at least for mtk-ramips'));
 			o.optional = true;
-			o.depends('hnat_offloading', '1');
+			o.depends('hnat', '1');
 		}
 
 		s = m.section(form.GridSection, 'zone', _('Zones'));
