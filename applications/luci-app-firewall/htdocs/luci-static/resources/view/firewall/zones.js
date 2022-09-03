@@ -56,10 +56,10 @@ return view.extend({
 		};
 
 		o = s.option(form.Flag, 'drop_invalid', _('Drop invalid packets'));
-		if (L.hasSystemFeature('fullcone')) {
+		/*if (L.hasSystemFeature('fullcone')) {
 			o = s.option(form.Flag, 'fullcone', _('Enable FullCone NAT'));
 			o = s.option(form.Flag, 'fullcone6', _('Enable FullCone NAT6'));
-		}
+		}*/
 
 		var p = [
 			s.option(form.ListValue, 'input', _('Input')),
@@ -73,9 +73,9 @@ return view.extend({
 			p[i].value('ACCEPT', _('accept'));
 		}
 
-		/*if (L.hasSystemFeature('fullconenat')) {
-		o = s.option(form.Flag, 'fullcone', _('FullCone NAT'), _('Using FullCone NAT can improve gaming performance effectively'));
-		}*/
+		if (L.hasSystemFeature('fullconenat')) {
+		o = s.option(form.Flag, 'fullcone', _('Enable FullCone NAT'), _('Using FullCone NAT can improve gaming performance effectively'));
+		}
 
 		/* Netfilter flow offload support */
 
@@ -100,7 +100,7 @@ return view.extend({
 
 		/* MTK hnat support */
 
-		if (L.hasSystemFeature('hnat')) {
+		/*if (L.hasSystemFeature('hnat')) {
 			s = m.section(form.TypedSection, 'defaults', _('MTK/HNAT Offloading'),
 				_('Experimental feature. Not fully compatible with QoS/SQM.'));
 
@@ -117,7 +117,7 @@ return view.extend({
 				_('Requires MTK hardware NAT support. Implemented at least for mtk-ramips'));
 			o.optional = true;
 			o.depends('hnat', '1');
-		}
+		}*/
 
 		s = m.section(form.GridSection, 'zone', _('Zones'));
 		s.addremove = true;
