@@ -20,12 +20,12 @@ return view.extend({
 
 		o = s.taboption('general', form.Flag, 'enabled', _('Enabled'));
 		o.rmempty = false;
-		
+
 		o = s.taboption('general', form.ListValue, 'mode',
 			_('Mode'),
 			_("Ping Reboot: Reboot this device if a ping to a specified host fails for a specified duration of time. <br /> \
 				Periodic Reboot: Reboot this device after a specified interval of time. <br /> \
-				Restart Interface: Restart a network interface if a ping to a specified host fails for a specified duration of time. <br />\
+				Restart Interface: Restart a network interface if a ping to a specified host fails for a specified duration of time. <br /> \
 				Run Script: Run a script if a ping to a specified host fails for a specified duration of time. <br />"));
 		o.value('ping_reboot', _('Ping Reboot'));
 		o.value('periodic_reboot', _('Periodic Reboot'));
@@ -34,7 +34,7 @@ return view.extend({
 
 		o = s.taboption('general', form.Value, 'script',
 				_('Script to run'),
-				_(`Script to run when the host has not responded for the specified duration of time. The script is passed the interface name as $1`));
+				_('Script to run when the host has not responded for the specified duration of time. The script is passed the interface name as $1'));
 		o.datatype = 'file';
 		o.default = "/etc/watchcat.user.sh";
 		o.depends({ mode: "run_script" });
@@ -54,7 +54,7 @@ return view.extend({
 
 		o = s.taboption('general', form.Value, 'pinghosts', _('Host To Check'), _(`IP address or hostname to ping.`));
 		o.datatype = 'host';
-		o.default = '223.5.5.5';
+		o.default = '8.8.8.8';
 		o.depends({ mode: "ping_reboot" });
 		o.depends({ mode: "restart_iface" });
 		o.depends({ mode: "run_script" });
