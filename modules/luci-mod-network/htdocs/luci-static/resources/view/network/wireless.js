@@ -960,7 +960,10 @@ return view.extend({
 					o.default = o.disabled;
 
 					o = ss.taboption('advanced', form.Flag, 'ldpc', _('LDPC'));
-					o.default = o.disabled;
+					o.depends({'_freq': '2g', '!contains': true});
+
+					o = ss.taboption('advanced', form.Flag, 'vht_ldpc', _('LDPC'));
+					o.depends({'_freq': '5g', '!contains': true});
 
 					o = ss.taboption('advanced', form.Flag, 'txburst', _('Tx Bursting'));
 					o.default = o.disabled;
@@ -1154,6 +1157,10 @@ return view.extend({
 
 						return mode;
 					};
+
+					o = ss.taboption('general', form.Flag, 'doth', _('80211.h'));
+					o.depends('mode', 'ap');
+					o.default = o.disabled;
 
 					o = ss.taboption('general', form.Flag, 'hidden', _('Hide <abbr title="Extended Service Set Identifier">ESSID</abbr>'), _('Where the ESSID is hidden, clients may fail to roam and airtime efficiency may be significantly reduced.'));
 					o.depends('mode', 'ap');
