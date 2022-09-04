@@ -22,3 +22,6 @@ msgstr "自动生成中国地址段和各大ISP运营商的 IPSet 地址段，�
 
 msgid "Enable GFW IPSet"
 msgstr "启用 GFW IPSet"
+
+msgid "Anti-pollution DNS Server"
+msgstr "防污染 DNS 服务器"
