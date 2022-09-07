@@ -31,26 +31,26 @@ start_pdnsd() {
 	[ -d "/var/run/dnscache" ] || mkdir -p "/var/run/dnscache"
 	cat > "/var/run/dnscache/dnscache.conf" <<EOF
 global {
-    perm_cache=1024;        # dnsç¼“å­˜å¤§å°ï¼Œå•ä½KBï¼Œå»ºè®®ä¸è¦å†™çš„å¤ªå¤§
-    cache_dir="/var/dnscache";     # ç¼“å­˜æ–‡ä»¶çš„ä½ç½®
+    perm_cache=1024;        # dns»º´æ´óÐ¡£¬µ¥Î»KB£¬½¨Òé²»ÒªÐ´µÄÌ«´ó
+    cache_dir="/var/dnscache";     # »º´æÎÄ¼þµÄÎ»ÖÃ
     pid_file = /var/run/dnscache.pid;
-    server_ip = 127.0.0.1;        # pdnsdç›‘å¬çš„ç½‘å¡ï¼Œ0.0.0.0æ˜¯å…¨éƒ¨ç½‘å¡
-    server_port=5333;           # pdnsdç›‘å¬çš„ç«¯å£ï¼Œä¸è¦å’Œåˆ«çš„æœåŠ¡å†²çªå³å¯
+    server_ip = 127.0.0.1;        # pdnsd¼àÌýµÄÍø¿¨£¬0.0.0.0ÊÇÈ«²¿Íø¿¨
+    server_port=5333;           # pdnsd¼àÌýµÄ¶Ë¿Ú£¬²»ÒªºÍ±ðµÄ·þÎñ³åÍ»¼´¿É
     status_ctl = on;
-    paranoid=on;                  # äºŒæ¬¡è¯·æ±‚æ¨¡å¼ï¼Œå¦‚æžœè¯·æ±‚ä¸»DNSæœåŠ¡å™¨è¿”å›žçš„æ˜¯åžƒåœ¾åœ°å€ï¼Œå°±å‘å¤‡ç”¨æœåŠ¡å™¨è¯·æ±‚
+    paranoid=on;                  # ¶þ´ÎÇëÇóÄ£Ê½£¬Èç¹ûÇëÇóÖ÷DNS·þÎñÆ÷·µ»ØµÄÊÇÀ¬»øµØÖ·£¬¾ÍÏò±¸ÓÃ·þÎñÆ÷ÇëÇó
     query_method=udp_only;
     neg_domain_pol = off;
-    par_queries = 400;          # æœ€å¤šåŒæ—¶è¯·æ±‚æ•°
-    min_ttl = 1h;               # DNSç»“æžœæœ€çŸ­ç¼“å­˜æ—¶é—´
-    max_ttl = 1w;               # DNSç»“æžœæœ€é•¿ç¼“å­˜æ—¶é—´
-    timeout = 10;               # DNSè¯·æ±‚è¶…æ—¶æ—¶é—´ï¼Œå•ä½ç§’
+    par_queries = 400;          # ×î¶àÍ¬Ê±ÇëÇóÊý
+    min_ttl = 1h;               # DNS½á¹û×î¶Ì»º´æÊ±¼ä
+    max_ttl = 1w;               # DNS½á¹û×î³¤»º´æÊ±¼ä
+    timeout = 10;               # DNSÇëÇó³¬Ê±Ê±¼ä£¬µ¥Î»Ãë
 }
 
 server {
     label = "routine";
-    ip = ${dns_caching_dns};     # è¿™é‡Œä¸ºä¸»è¦ä¸Šçº§ dns çš„ ip åœ°å€ï¼Œå»ºè®®å¡«å†™ä¸€ä¸ªå½“åœ°æœ€å¿«çš„DNSåœ°å€
-    timeout = 5;              # DNSè¯·æ±‚è¶…æ—¶æ—¶é—´
-    reject = 74.125.127.102,  # ä»¥ä¸‹æ˜¯è„IPï¼Œä¹Ÿå°±æ˜¯DNSæ±¡æŸ“ä¸€èˆ¬ä¼šè¿”å›žçš„ç»“æžœï¼Œå¦‚æžœæ”¶åˆ°å¦‚ä¸‹DNSç»“æžœä¼šè§¦å‘äºŒæ¬¡è¯·æ±‚ï¼ˆTCPåè®®ä¸€èˆ¬ä¸ä¼šç¢°åˆ°è„IPï¼‰
+    ip = ${dns_caching_dns};     # ÕâÀïÎªÖ÷ÒªÉÏ¼¶ dns µÄ ip µØÖ·£¬½¨ÒéÌîÐ´Ò»¸öµ±µØ×î¿ìµÄDNSµØÖ·
+    timeout = 5;              # DNSÇëÇó³¬Ê±Ê±¼ä
+    reject = 74.125.127.102,  # ÒÔÏÂÊÇÔàIP£¬Ò²¾ÍÊÇDNSÎÛÈ¾Ò»°ã»á·µ»ØµÄ½á¹û£¬Èç¹ûÊÕµ½ÈçÏÂDNS½á¹û»á´¥·¢¶þ´ÎÇëÇó£¨TCPÐ­ÒéÒ»°ã²»»áÅöµ½ÔàIP£©
         74.125.155.102,
         74.125.39.102,
         74.125.39.113,
@@ -113,9 +113,9 @@ server {
 }
 
 server {
-    label = "special";                  # è¿™ä¸ªéšä¾¿å†™
-    ip = 117.50.10.10,52.80.52.52,119.29.29.29; # è¿™é‡Œä¸ºå¤‡ç”¨DNSæœåŠ¡å™¨çš„ ip åœ°å€
-    port = 5353;                        # æŽ¨èä½¿ç”¨53ä»¥å¤–çš„ç«¯å£ï¼ˆDNSæœåŠ¡å™¨å¿…é¡»æ”¯æŒ
+    label = "special";                  # Õâ¸öËæ±ãÐ´
+    ip = 117.50.10.10,52.80.52.52,119.29.29.29; # ÕâÀïÎª±¸ÓÃDNS·þÎñÆ÷µÄ ip µØÖ·
+    port = 5353;                        # ÍÆ¼öÊ¹ÓÃ53ÒÔÍâµÄ¶Ë¿Ú£¨DNS·þÎñÆ÷±ØÐëÖ§³Ö
     proxy_only = on;
     timeout = 5;
 }
@@ -212,17 +212,19 @@ change_dns() {
 	uci add_list dhcp.@dnsmasq[0].server="127.0.0.1#5333"
 	uci set dhcp.@dnsmasq[0].noresolv="1"
 	uci commit dhcp
+
+	touch "/var/run/dnscache/.dns-changed"
 }
 
 revert_dns() {
-  uci set dhcp.@dnsmasq[0].noresolv="0"
+	[ -e "/var/run/dnscache/.dns-changed" ] && return 1
+
 	uci -q del_list dhcp.@dnsmasq[0].server="127.0.0.1#5333"
-	if [ -d "/tmp/resolv.conf.d" ]; then
-		uci set dhcp.@dnsmasq[0].resolvfile="/tmp/resolv.conf.d/resolv.conf.auto"
-	else
-		uci set dhcp.@dnsmasq[0].resolvfile="/tmp/resolv.conf.auto"
-	fi
+	uci set dhcp.@dnsmasq[0].resolvfile="/tmp/resolv.conf.d/resolv.conf.auto"
+	uci set dhcp.@dnsmasq[0].noresolv="0"
 	uci commit dhcp
+
+	rm -f "/var/run/dnscache/.dns-changed"
 }
 
 load_sfe() {
@@ -244,6 +246,9 @@ start(){
 	uci set firewall.@defaults[0].flow_offloading_hw="${hw_flow}"
 	uci set firewall.@defaults[0].fullcone="${fullcone_nat}"
 	uci commit firewall
+	reload_config firewall
+
+	/etc/init.d/turboacc_fss start
 
 	[ "${sw_flow}" -eq "0" ] && [ "${hw_flow}" -eq "1" ] && {
 		lsmod | grep -q mtkhnat || modprobe mtkhnat
@@ -289,11 +294,11 @@ start(){
 
 stop(){
 	inital_conf
-
 	uci set firewall.@defaults[0].flow_offloading="${sw_flow}"
 	uci set firewall.@defaults[0].flow_offloading_hw="${hw_flow}"
 	uci set firewall.@defaults[0].fullcone="${fullcone_nat}"
 	uci commit firewall
+	reload_config firewall
 
 	[ "${hw_flow}" -eq "0" ] && {
 		lsmod | grep -q mtkhnat && rmmod mtkhnat
@@ -328,7 +333,7 @@ check_status(){
 		if [[ "$(cat "/sys/module/xt_FLOWOFFLOAD/refcnt" 2>"/dev/null" || echo 0)" -ne "0" || "$(cat "/sys/module/nft_flow_offload/refcnt" 2>"/dev/null" || echo 0)" -ne "0" ]]; then
 			echo -n "Flow Offloading"
 			exit 0
-		elif [[ "$(cat "/sys/module/xt_FLOWOFFLOAD/refcnt" 2>"/dev/null")" -eq "0" || "$(cat "/sys/module/nft_flow_offload/refcnt" 2>"/dev/null")" -eq "0" ]] && \
+		elif [[ "$(cat "/sys/module/xt_FLOWOFFLOAD/refcnt" 2>"/dev/null" || echo 0)" -eq "0" || "$(cat "/sys/module/nft_flow_offload/refcnt" 2>"/dev/null" || echo 0)" -eq "0" ]] && \
 		    [ -e /sys/kernel/debug/hnat/hnat_version ]; then
 			echo -n "MediaTek HWNAT"
 			exit 0
