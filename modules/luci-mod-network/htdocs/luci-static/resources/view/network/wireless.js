@@ -956,23 +956,30 @@ return view.extend({
 					o.value('2', _('High'));
 					o.value('3', _('Very High'));
 
+					o = ss.taboption('advanced', form.Flag, 'su_beamformee', _('SU-Beamforming'));
+					o.depends({'_freq': '2g', '!contains': true});
+					o.default = o.disabled;
+
+					o = ss.taboption('advanced', form.Flag, 'su_beamformer', _('SU-MIMO'));
+					o.depends({'_freq': '2g', '!contains': true});
+					o.default = o.disabled;
+
+					o = ss.taboption('advanced', form.Flag, 'mu_beamformee', _('MU-Beamforming'));
+					o.depends({'_freq': '5g', '!contains': true});
+					o.default = o.disabled;
+
 					o = ss.taboption('advanced', form.Flag, 'mu_beamformer', _('MU-MIMO'));
+					o.depends({'_freq': '5g', '!contains': true});
 					o.default = o.disabled;
 
 					o = ss.taboption('advanced', form.Flag, 'ldpc', _('LDPC'));
 					o.depends({'_freq': '2g', '!contains': true});
 
-					o = ss.taboption('advanced', form.Flag, 'vht_ldpc', _('LDPC'));
+					o = ss.taboption('advanced', form.Flag, 'rxldpc', _('LDPC'));
 					o.depends({'_freq': '5g', '!contains': true});
 
-					o = ss.taboption('advanced', form.Flag, 'txburst', _('Tx Bursting'));
+					o = ss.taboption('advanced', form.Flag, 'tx_burst', _('Tx Bursting'));
 					o.default = o.disabled;
-
-					o = ss.taboption('advanced', form.Flag, 'rx_stbc', _('RX STBC'));
-					o.depends({'_freq': '5g', '!contains': true});
-
-					o = ss.taboption('advanced', form.Flag, 'tx_stbc', _('TX STBC'));
-					o.depends({'_freq': '5g', '!contains': true});
 
 					o = ss.taboption('advanced', form.Value, 'distance', _('Distance Optimization'), _('Distance to farthest network member in meters.'));
 					o.datatype = 'or(range(0,114750),"auto")';
@@ -987,6 +994,11 @@ return view.extend({
 					o.placeholder = _('off');
 
 					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
+					o.depends({'_freq': '2g', '!contains': true});
+					o.rmempty = true;
+
+					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 80MHz mode'));
+					o.depends({'_freq': '5g', '!contains': true});
 					o.rmempty = true;
 
 					o = ss.taboption('advanced', form.Flag, 'vendor_vht', _('Enable 256-QAM'), _('802.11n 2.4Ghz Only'));

@@ -1816,7 +1816,7 @@ msgid "Define a custom domain name and the corresponding PTR record"
 msgstr "自定义域名对应的IP地址 (需要客户端DNS指向本路由)"
 
 msgid "Domain Name"
-msgstr "域名 (不带HTTPS://)"
+msgstr "域名 (不带HTTPS)"
 
 msgid "-Address"
 msgstr "-地址"
@@ -3088,6 +3088,9 @@ msgstr "强制"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:971
 msgid "Force 40MHz mode"
 msgstr "强制 40MHz 模式"
+
+msgid "Force 80MHz mode"
+msgstr "强制 80MHz 模式"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1237
 msgid "Force CCMP (AES)"
