@@ -993,12 +993,7 @@ return view.extend({
 					o.datatype = 'uinteger';
 					o.placeholder = _('off');
 
-					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
-					o.depends({'_freq': '2g', '!contains': true});
-					o.rmempty = true;
-
-					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 80MHz mode'));
-					o.depends({'_freq': '5g', '!contains': true});
+					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40/80MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
 					o.rmempty = true;
 
 					o = ss.taboption('advanced', form.Flag, 'vendor_vht', _('Enable 256-QAM'), _('802.11n 2.4Ghz Only'));

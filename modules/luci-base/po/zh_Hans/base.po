@@ -3086,11 +3086,8 @@ msgid "Force"
 msgstr "强制"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:971
-msgid "Force 40MHz mode"
-msgstr "强制 40MHz 模式"
-
-msgid "Force 80MHz mode"
-msgstr "强制 80MHz 模式"
+msgid "Force 40/80MHz mode"
+msgstr "强制 40/80MHz 模式"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1237
 msgid "Force CCMP (AES)"
