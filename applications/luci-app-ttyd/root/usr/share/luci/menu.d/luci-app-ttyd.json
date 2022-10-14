@@ -1,5 +1,5 @@
 {
-	"admin/system/ttyd": {
+	"admin/services/ttyd": {
 		"title": "Terminal",
 		"action": {
 			"type": "firstchild"
@@ -10,7 +10,7 @@
 		}
 	},
 
-	"admin/system/ttyd/ttyd": {
+	"admin/services/ttyd/ttyd": {
 		"title": "Terminal",
 		"order": 1,
 		"action": {
@@ -19,7 +19,7 @@
 		}
 	},
 
-	"admin/system/ttyd/config": {
+	"admin/services/ttyd/config": {
 		"title": "Config",
 		"order": 2,
 		"action": {
