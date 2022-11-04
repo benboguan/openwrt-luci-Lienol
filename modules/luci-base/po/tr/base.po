@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-09-25 14:22+0000\n"
-"Last-Translator: semih <semiht@gmail.com>\n"
+"PO-Revision-Date: 2022-10-28 15:05+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/openwrt/luci/tr/>"
 "\n"
 "Language: tr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.14.2-dev\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:643
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -233,12 +233,16 @@ msgid ""
 "<code>/#/</code> matches any domain. <code>/example.com/</code> returns "
 "NXDOMAIN."
 msgstr ""
+"<code>/#/</code> herhangi bir alanla eşleşir. <code>/example.com/</code>, "
+"NXDOMAIN değerini döndürür."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:295
 msgid ""
 "<code>/example.com/#</code> returns NULL addresses (<code>0.0.0.0</code> and "
 "<code>::</code>) for example.com and its subdomains."
 msgstr ""
+"<code>/example.com/#</code>, example.com ve alt alanları için NULL adresleri "
+"(<code>0.0.0.0</code> ve <code>::</code>) döndürür."
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:87
 msgctxt "nft relational \">\" operator expression"
@@ -371,6 +375,10 @@ msgid ""
 "to the STA MAC address. Note: This is not Directed Multicast Service (DMS) "
 "in 802.11v. Note: might break receiver STA multicast expectations."
 msgstr ""
+"Çok noktaya yayın hedef MAC'leri ile ARP, IPv4 ve IPv6 (hatta 802.1Q), STA "
+"MAC adresine tek yayındır. Not: Bu, 802.11v'deki Yönlendirilmiş Çok Noktaya "
+"Yayın Hizmeti (DMS) değildir. Not: alıcının STA çok noktaya yayın "
+"beklentilerini bozabilir."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1511
 msgid "ATM (Asynchronous Transfer Mode)"
@@ -405,7 +413,7 @@ msgstr ""
 msgid "ATM device number"
 msgstr "ATM cihaz numarası"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:36
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:37
 msgid "ATU-C System Vendor ID"
 msgstr "ATU-C Sistem Satıcısı Kimliği"
 
@@ -643,7 +651,7 @@ msgstr "Yaşlanma süresi"
 msgid "Aggregate Originator Messages"
 msgstr "Gönderen Mesajlarını Birleştir"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:27
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:28
 msgid "Aggregate Transmit Power (ACTATP)"
 msgstr "Toplam İletim Gücü (ACTATP)"
 
@@ -801,7 +809,7 @@ msgid "An optional, short description for this device"
 msgstr "Bu cihaz için isteğe bağlı, kısa bir açıklama"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1484
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:21
 msgid "Annex"
 msgstr "Annex"
 
@@ -941,7 +949,7 @@ msgstr "Başvuru isteği <code>%h</code> durumuyla başarısız oldu"
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4395
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4515
 msgid "Apply unchecked"
-msgstr "İşaretlenmemişi uygula"
+msgstr "Kontrolsuz olarak uygula"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4648
 msgid "Apply with revert after connectivity loss"
@@ -1024,7 +1032,7 @@ msgstr "Kimlik doğrulama türü"
 msgid "Authoritative"
 msgstr "Yetkili"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:17
+#: modules/luci-base/ucode/template/sysauth.ut:17
 #: themes/luci-theme-bootstrap/htdocs/luci-static/resources/view/bootstrap/sysauth.js:11
 msgid "Authorization Required"
 msgstr "İzin Gerekli"
@@ -1102,6 +1110,8 @@ msgid ""
 "Avoid uselessly triggering dial-on-demand links (filters SRV/SOA records and "
 "names with underscores)."
 msgstr ""
+"İsteğe bağlı arama bağlantılarını gereksiz yere tetiklemekten kaçın (SRV/SOA "
+"kayıtlarını ve alt çizgili adları filtreler)."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1505
 msgid "B43 + B43C"
@@ -1132,10 +1142,6 @@ msgstr "Geri"
 msgid "Back to Overview"
 msgstr "Genel Bakışa dön"
 
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:48
-msgid "Back to configuration"
-msgstr "Yapılandırmaya dön"
-
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:826
 msgid "Back to peer configuration"
 msgstr "Eş yapılandırmasına geri dön"
@@ -1149,7 +1155,6 @@ msgid "Backup / Flash Firmware"
 msgstr "Yedekleme/Sistem Yazılımı Yükleme"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:351
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:12
 msgid "Backup file list"
 msgstr "Yedek dosya listesi"
 
@@ -1199,7 +1204,6 @@ msgid "Beacon Interval"
 msgstr "İşaret Aralığı"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:352
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:46
 msgid ""
 "Below is the determined list of files to backup. It consists of changed "
 "configuration files marked by opkg, essential base files and the user "
@@ -1232,13 +1236,15 @@ msgstr "Arabirimi bağla"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:595
 msgid ""
 "Bind service records to a domain name: specify the location of services."
-msgstr ""
+msgstr "Hizmet kayıtlarını bir alan adına bağla: hizmetlerin yerini belirtin."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:556
 msgid ""
 "Bind service records to a domain name: specify the location of services. See "
 "<a href=\"%s\">RFC2782</a>."
 msgstr ""
+"Hizmet kayıtlarını bir alan adına bağla: hizmetlerin yerini belirtin. <a "
+"href=\"%s\">RFC2782</a>'ye bakın."
 
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/gre.js:59
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/gretap.js:64
@@ -1346,7 +1352,7 @@ msgstr "CLAT yapılandırması başarısız oldu"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:574
 msgid "CNAME or fqdn"
-msgstr ""
+msgstr "CNAME veya fqdn"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/processes.js:72
 msgid "CPU usage (%)"
@@ -1605,17 +1611,13 @@ msgstr ""
 "Belirli bir saniye süresinden sonra etkin olmayan bağlantıyı kapatın, "
 "bağlantıyı sürdürmek için 0'ı kullanın"
 
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:49
-msgid "Close list..."
-msgstr "Listeyi kapat..."
-
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:44
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:63
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2184
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:391
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:352
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:355
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:72
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:66
 msgid "Collecting data..."
 msgstr "Veriler toplanıyor..."
 
@@ -1657,7 +1659,7 @@ msgstr "Giden sağlama toplamını hesaplayın (isteğe bağlı)."
 
 #: protocols/luci-proto-nebula/htdocs/luci-static/resources/protocol/nebula.js:40
 msgid "Config File"
-msgstr ""
+msgstr "Yapılandırma dosyası"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4375
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
@@ -1706,8 +1708,8 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:764
 msgid ""
-"Configures the operation mode of the <abbr title=\"Router "
-"Advertisement\">RA</abbr> service on this interface."
+"Configures the operation mode of the <abbr title=\"Router Advertisement"
+"\">RA</abbr> service on this interface."
 msgstr ""
 "Bu arayüzde <abbr title=\"Router Advertisement\">RA</abbr> hizmetinin "
 "çalışma modunu yapılandırır."
@@ -1890,8 +1892,8 @@ msgstr "Özel flaş aralığı (kernel: timer)"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:59
 msgid ""
-"Customizes the behaviour of the device <abbr title=\"Light Emitting "
-"Diode\">LED</abbr>s if possible."
+"Customizes the behaviour of the device <abbr title=\"Light Emitting Diode"
+"\">LED</abbr>s if possible."
 msgstr ""
 "Mümkünse, cihazın <abbr title=\"Light Emitting Diode\">LED</abbr> lerinin "
 "davranışını özelleştirir."
@@ -1998,11 +2000,11 @@ msgid "DS-Lite AFTR address"
 msgstr "DS-Lite AFTR adresi"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1481
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:44
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:45
 msgid "DSL"
 msgstr "DSL"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:14
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:15
 msgid "DSL Status"
 msgstr "DSL Durumu"
 
@@ -2020,7 +2022,7 @@ msgstr "DTIM Aralığı"
 msgid "DUID"
 msgstr "DUID"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:21
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:22
 msgid "Data Rate"
 msgstr "Veri hızı"
 
@@ -2328,9 +2330,9 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:246
 msgid ""
-"Dnsmasq is a lightweight <abbr title=\"Dynamic Host Configuration "
-"Protocol\">DHCP</abbr> server and <abbr title=\"Domain Name System\">DNS</"
-"abbr> forwarder."
+"Dnsmasq is a lightweight <abbr title=\"Dynamic Host Configuration Protocol"
+"\">DHCP</abbr> server and <abbr title=\"Domain Name System\">DNS</abbr> "
+"forwarder."
 msgstr ""
 "Dnsmasq, hafif bir <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</"
 "abbr> sunucusu ve <abbr title=\"Domain Name System\">DNS</abbr> "
@@ -2689,9 +2691,9 @@ msgstr "WPS düğmesini etkinleştirin, WPA(2)-PSK/WPA3-SAE gerektirir"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/uhttpd.js:14
 msgid ""
-"Enable automatic redirection of <abbr title=\"Hypertext Transfer "
-"Protocol\">HTTP</abbr> requests to <abbr title=\"Hypertext Transfer Protocol "
-"Secure\">HTTPS</abbr> port."
+"Enable automatic redirection of <abbr title=\"Hypertext Transfer Protocol"
+"\">HTTP</abbr> requests to <abbr title=\"Hypertext Transfer Protocol Secure"
+"\">HTTPS</abbr> port."
 msgstr ""
 "<abbr title=\"Hypertext Transfer Protocol\">HTTP</abbr> isteklerinin <abbr "
 "title=\"Hypertext Transfer Protocol Secure\">HTTPS</abbr> bağlantı noktasına "
@@ -2881,7 +2883,7 @@ msgstr "Hata"
 msgid "Error getting PublicKey"
 msgstr "PublicKey alınırken hata oluştu"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:29
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:30
 msgid "Errored seconds (ES)"
 msgstr "Hatalı saniye (ES)"
 
@@ -3231,21 +3233,21 @@ msgstr "Zorla yükseltme"
 msgid "Force use of NAT-T"
 msgstr "NAT-T'yi kullanmaya zorla"
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:8
+#: modules/luci-base/ucode/template/csrftoken.ut:8
 msgid "Form token mismatch"
 msgstr "Form belirteci uyuşmazlığı"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:919
 msgid ""
-"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr "
-"title=\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr "
-"title=\"Neighbour Advertisement, Type 136\">NA</abbr> messages between the "
-"designated master interface and downstream interfaces."
+"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr title="
+"\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr title=\"Neighbour "
+"Advertisement, Type 136\">NA</abbr> messages between the designated master "
+"interface and downstream interfaces."
 msgstr ""
-"<abbr title=\"Neighbour Discovery Protocol\">NDP</abbr><abbr "
-"title=\"Neighbour Solicitation, Type 135\">NS</abbr> ve <abbr "
-"title=\"Neighbour Advertisement, Type 136\">NA</abbr> belirlenmiş ana arayüz "
-"ve aşağı akış arayüzleri arasındaki mesajları ilet."
+"<abbr title=\"Neighbour Discovery Protocol\">NDP</abbr><abbr title="
+"\"Neighbour Solicitation, Type 135\">NS</abbr> ve <abbr title=\"Neighbour "
+"Advertisement, Type 136\">NA</abbr> belirlenmiş ana arayüz ve aşağı akış "
+"arayüzleri arasındaki mesajları ilet."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:770
 msgid ""
@@ -3268,7 +3270,7 @@ msgstr ""
 "DHCPv6 mesajlarını belirlenen ana arabirim ve aşağı akış arabirimleri "
 "arasında ilet."
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:28
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:29
 msgid "Forward Error Correction Seconds (FECS)"
 msgstr "İleri Hata Düzeltme Saniyelesi (FECS)"
 
@@ -3429,15 +3431,15 @@ msgstr "Genel Ayarlar"
 msgid "Global network options"
 msgstr "Genel ağ seçenekleri"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:82
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:89
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:74
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:70
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:84
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:67
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:92
 msgid "Go to firmware upgrade..."
 msgstr "Ürün yazılımı yükseltmesine git..."
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:72
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:64
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:60
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:57
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:82
 msgid "Go to password configuration..."
 msgstr "Parola yapılandırmasına git..."
@@ -3578,7 +3580,7 @@ msgstr "HTTP(lere) Erişim"
 msgid "Hang Up"
 msgstr "Kapat"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:33
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:34
 msgid "Header Error Code Errors (HEC)"
 msgstr "Üstbilgi Hata Kodu Hataları (HEC)"
 
@@ -3686,12 +3688,12 @@ msgstr "Hibrit"
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:49
 msgctxt "nft icmp code"
 msgid "ICMP code"
-msgstr ""
+msgstr "ICMP kodu"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:50
 msgctxt "nft icmp type"
 msgid "ICMP type"
-msgstr ""
+msgstr "ICMP türü"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:51
 msgctxt "nft icmpv6 code"
@@ -4080,10 +4082,10 @@ msgstr ""
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:340
 msgid ""
 "If your physical memory is insufficient unused data can be temporarily "
-"swapped to a swap-device resulting in a higher amount of usable <abbr "
-"title=\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a "
-"very slow process as the swap-device cannot be accessed with the high "
-"datarates of the <abbr title=\"Random Access Memory\">RAM</abbr>."
+"swapped to a swap-device resulting in a higher amount of usable <abbr title="
+"\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a very "
+"slow process as the swap-device cannot be accessed with the high datarates "
+"of the <abbr title=\"Random Access Memory\">RAM</abbr>."
 msgstr ""
 "Fiziksel belleğiniz yetersizse, kullanılmayan veriler geçici olarak bir "
 "takas cihazına aktarılabilir ve bu da daha yüksek miktarda kullanılabilir "
@@ -4151,7 +4153,7 @@ msgstr ""
 "döngülerinden kaçınmak için köprü döngüsünden kaçınmanın etkinleştirilmesi "
 "tavsiye edilir."
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:13
+#: modules/luci-base/ucode/template/csrftoken.ut:13
 msgid ""
 "In order to prevent unauthorized access to the system, your request has been "
 "blocked. Click \"Continue »\" below to return to the previous page."
@@ -4353,10 +4355,6 @@ msgstr "Arayüzler"
 msgid "Internal"
 msgstr "İç"
 
-#: modules/luci-base/luasrc/view/error500.htm:8
-msgid "Internal Server Error"
-msgstr "İç Sunucu Hatası"
-
 #: protocols/luci-proto-bonding/htdocs/luci-static/resources/protocol/bonding.js:285
 msgid "Interval For Sending Learning Packets"
 msgstr "Öğrenme Paketlerini Gönderme Aralığı"
@@ -4434,8 +4432,8 @@ msgstr "Geçersiz komut"
 msgid "Invalid hexadecimal value"
 msgstr "Geçersiz onaltılık değer"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:37
+#: modules/luci-base/ucode/template/sysauth.ut:12
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:32
 msgid "Invalid username and/or password! Please try again."
 msgstr "Geçersiz kullanıcı adı ve/veya şifre! Lütfen tekrar deneyin."
 
@@ -4459,8 +4457,8 @@ msgstr ""
 "Flash belleğe sığmayan bir görüntüyü flaş etmeye çalıştığınız anlaşılıyor, "
 "lütfen görüntü dosyasını doğrulayın!"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:89
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:96
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:77
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:91
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:72
 msgid "JavaScript required!"
 msgstr "JavaScript gerekli!"
@@ -4529,7 +4527,7 @@ msgstr "Anahtar eksik"
 
 #: protocols/luci-proto-unet/htdocs/luci-static/resources/protocol/unet.js:44
 msgid "Key used to sign network config"
-msgstr ""
+msgstr "Ağ yapılandırmasını imzalamak için kullanılan anahtar"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:71
 msgctxt "nft unit"
@@ -4597,12 +4595,14 @@ msgid ""
 "Larger weights (of the same prio) are given a proportionately higher "
 "probability of being selected."
 msgstr ""
+"Daha büyük ağırlıklara (aynı prio'nun) orantılı olarak daha yüksek seçilme "
+"olasılığı verilir."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:575
 msgid "Last member interval"
 msgstr "Son üye aralığı"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:23
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:24
 msgid "Latency"
 msgstr "Gecikme"
 
@@ -4670,19 +4670,19 @@ msgstr "Lejant:"
 msgid "Limit"
 msgstr "Sınır"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:24
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:25
 msgid "Line Attenuation (LATN)"
 msgstr "Hat Zayıflaması (LATN)"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:18
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:19
 msgid "Line Mode"
 msgstr "Hat Modu"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:17
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:18
 msgid "Line State"
 msgstr "Hat Durumu"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:19
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
 msgid "Line Uptime"
 msgstr "Hat Çalışma Süresi"
 
@@ -4801,9 +4801,9 @@ msgid "Loading directory contents…"
 msgstr "Dizin içeriği yükleniyor…"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:1942
-#: modules/luci-base/luasrc/view/view.htm:4
-#: modules/luci-mod-status/luasrc/view/admin_status/index.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:45
+#: modules/luci-base/ucode/template/view.ut:4
+#: modules/luci-mod-status/ucode/template/admin_status/index.ut:12
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:40
 msgid "Loading view…"
 msgstr "Görünüm yükleniyor…"
 
@@ -4880,7 +4880,7 @@ msgstr "Yalnızca Yerel Hizmet"
 
 #: protocols/luci-proto-unet/htdocs/luci-static/resources/protocol/unet.js:41
 msgid "Local wireguard key"
-msgstr ""
+msgstr "Yerel wireguard anahtarı"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:397
 msgid "Localise queries"
@@ -4920,8 +4920,8 @@ msgstr ""
 msgid "Logical network to which the tunnel will be added (bridged) (optional)."
 msgstr "Tünelin ekleneceği mantıksal ağ (köprülü) (isteğe bağlı)."
 
-#: modules/luci-base/luasrc/view/sysauth.htm:38
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:41
+#: modules/luci-base/ucode/template/sysauth.ut:38
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:36
 msgid "Login"
 msgstr "Oturum Aç"
 
@@ -4933,13 +4933,17 @@ msgstr "Oturumu Kapat"
 msgid "Loose filtering"
 msgstr "Gevşek filtreleme"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:31
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:32
 msgid "Loss of Signal Seconds (LOSS)"
 msgstr "Sinyal Saniye Kaybı (LOSS)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:669
 msgid "Lowest leased address as offset from the network address."
 msgstr "Ağ adresinden ofset olarak en düşük kiralanan adres."
+
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/footer.ut:12
+msgid "Lua compatibility mode active"
+msgstr "Lua uyumluluk modu etkin"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:48
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:83
@@ -5026,7 +5030,7 @@ msgstr "MTU"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:259
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:303
 msgid ""
@@ -5054,7 +5058,7 @@ msgstr "Ana"
 msgid "Max <abbr title=\"Router Advertisement\">RA</abbr> interval"
 msgstr "Maks <abbr title=\"Router Advertisement\">RA</abbr> aralığı"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:22
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:23
 msgid "Max. Attainable Data Rate (ATTNDR)"
 msgstr "Maks. Ulaşılabilir Veri Hızı (ATTNDR)"
 
@@ -5121,7 +5125,7 @@ msgstr "Maksimum iletim gücü"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:394
 msgid "May prevent VoIP or other services from working."
-msgstr ""
+msgstr "VoIP veya diğer hizmetlerin çalışmasını engelleyebilir."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:129
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:188
@@ -5371,7 +5375,7 @@ msgstr "Yukarı taşı"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1151
 msgid "Multi To Unicast"
-msgstr ""
+msgstr "Çok Noktadan Tek Noktaya"
 
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/gre.js:89
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/gretap.js:94
@@ -5439,16 +5443,16 @@ msgstr "Yeni ağın adı"
 
 #: protocols/luci-proto-unet/htdocs/luci-static/resources/protocol/unet.js:38
 msgid "Name of the tunnel device"
-msgstr ""
+msgstr "Tünel cihazının adı"
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:46
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:39
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:50
 msgid "Navigation"
 msgstr "Navigasyon"
 
 #: protocols/luci-proto-nebula/htdocs/luci-static/resources/protocol/nebula.js:10
 msgid "Nebula Network"
-msgstr ""
+msgstr "Nebula Ağı"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:653
 msgid "Neighbour cache validity"
@@ -5583,9 +5587,9 @@ msgstr "NAT-T yok"
 msgid "No RX signal"
 msgstr "RX sinyali yok"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:80
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:87
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:72
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:68
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:82
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:65
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:90
 msgid ""
 "No changes to settings will be stored and are lost after rebooting. This "
@@ -5629,10 +5633,6 @@ msgstr "Kullanılabilir girdi yok"
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2908
 msgid "No entries in this directory"
 msgstr "Bu dizinde giriş yok"
-
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:82
-msgid "No files found"
-msgstr "Dosya bulunamadı"
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:833
 msgid ""
@@ -5679,8 +5679,8 @@ msgstr "Negatif önbellek yok"
 msgid "No nftables ruleset loaded."
 msgstr "Yüklü nftables kural kümesi yok."
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:69
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:61
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:57
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:54
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:79
 msgid "No password set!"
 msgstr "Şifre belirlenmedi!"
@@ -5720,7 +5720,7 @@ msgstr "Bölge atanmadı"
 msgid "Noise"
 msgstr "Gürültü"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:26
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:27
 msgid "Noise Margin (SNR)"
 msgstr "Gürültü Marjı (SNR)"
 
@@ -5728,7 +5728,7 @@ msgstr "Gürültü Marjı (SNR)"
 msgid "Noise:"
 msgstr "Gürültü:"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:34
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:35
 msgid "Non Pre-emptive CRC errors (CRC_P)"
 msgstr "Önleyici Olmayan CRC hataları (CRC_P)"
 
@@ -5747,7 +5747,7 @@ msgstr "Yok"
 msgid "Normal"
 msgstr "Normal"
 
-#: modules/luci-base/luasrc/view/error404.htm:8
+#: modules/luci-base/ucode/template/error404.ut:9
 msgid "Not Found"
 msgstr "Bulunamadı"
 
@@ -5890,7 +5890,6 @@ msgid "Open iptables rules overview…"
 msgstr "iptables kurallarına genel bakışı aç…"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:472
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:19
 msgid "Open list..."
 msgstr "Listeyi aç..."
 
@@ -6063,9 +6062,9 @@ msgstr "Seçenekler"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:531
 msgid ""
 "Options for the Network-ID. (Note: needs also Network-ID.) E.g. "
-"\"<code>42,192.168.1.4</code>\" for NTP server, \"<code>3,192.168.4.4</"
-"code>\" for default route. <code>0.0.0.0</code> means \"the address of the "
-"system running dnsmasq\"."
+"\"<code>42,192.168.1.4</code>\" for NTP server, \"<code>3,192.168.4.4</code>"
+"\" for default route. <code>0.0.0.0</code> means \"the address of the system "
+"running dnsmasq\"."
 msgstr ""
 "Ağ kimliği için seçenekler. (Not: ayrıca Ağ kimliğine ihtiyaç duyar.) Ör. "
 "NTP sunucusu için \"<code>42,192.168.1.4</code>\", öntanımlı yönlendirme "
@@ -6079,7 +6078,7 @@ msgstr "Seçenekler:"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:584
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:616
 msgid "Ordinal: lower comes first."
-msgstr ""
+msgstr "Sıra: düşük önce gelir."
 
 #: protocols/luci-proto-batman-adv/htdocs/luci-static/resources/protocol/batadv.js:55
 msgid "Originator Interval"
@@ -6356,13 +6355,13 @@ msgctxt "MACVLAN mode"
 msgid "Pass-through (Mirror physical device to single MAC VLAN)"
 msgstr "Geçiş (Fiziksel cihazı tek bir MAC VLAN'a yansıtın)"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:29
+#: modules/luci-base/ucode/template/sysauth.ut:29
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1690
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/password.js:51
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:114
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:103
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:58
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:24
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:19
 msgid "Password"
 msgstr "Parola"
 
@@ -6537,7 +6536,7 @@ msgstr "Ping"
 msgid "Pkts."
 msgstr "Pktler."
 
-#: modules/luci-base/luasrc/view/sysauth.htm:19
+#: modules/luci-base/ucode/template/sysauth.ut:19
 msgid "Please enter your username and password."
 msgstr "Lütfen kullanıcı adınızı ve şifrenizi giriniz."
 
@@ -6571,11 +6570,11 @@ msgstr "Bağlantı noktası durumu:"
 msgid "Potential negation of: %s"
 msgstr "Olası olumsuzluk: %s"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:37
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:38
 msgid "Power Management Mode"
 msgstr "Güç Yönetimi Modu"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:35
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:36
 msgid "Pre-emptive CRC errors (CRCP_P)"
 msgstr "Önleyici CRC hataları (CRCP_P)"
 
@@ -6728,7 +6727,7 @@ msgstr ""
 
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:120
 msgid "Proxy Server"
-msgstr ""
+msgstr "Proxy sunucusu"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1077
 msgid "Pseudo Ad-Hoc (ahdemo)"
@@ -6827,7 +6826,7 @@ msgstr "RFC3947 NAT-T modu"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1456
 msgid "RSN Preauth"
-msgstr ""
+msgstr "RSN Ön Yetkilendirme"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1003
 msgid "RSSI threshold for joining"
@@ -6906,7 +6905,7 @@ msgstr "Önerilen. WireGuard arayüzünün IP adresleri."
 
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:164
 msgid "Reconnect Timeout"
-msgstr ""
+msgstr "Yeniden Bağlanma Zaman Aşımı"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:504
 msgid "Reconnect this interface"
@@ -7056,7 +7055,7 @@ msgstr "Gereklidir. Bu arabirim için Base64 ile kodlanmış özel anahtar."
 
 #: protocols/luci-proto-nebula/htdocs/luci-static/resources/protocol/nebula.js:40
 msgid "Required. Path to the .yml config file for this interface."
-msgstr ""
+msgstr "Gerekli. Bu arabirim için .yml yapılandırma dosyasının yolu."
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:587
 msgid "Required. Public key of the WireGuard peer."
@@ -7139,7 +7138,7 @@ msgid "Reselection policy for primary slave"
 msgstr "Birincil bağımlı için yeniden seçim politikası"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2197
-#: modules/luci-base/luasrc/view/sysauth.htm:39
+#: modules/luci-base/ucode/template/sysauth.ut:39
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:30
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:66
@@ -7263,8 +7262,8 @@ msgstr "Kaynağı <strong>%h</strong> olarak yeniden yaz"
 msgctxt "nft snat ip to addr:port"
 msgid "Rewrite source to <strong>%h</strong>, port <strong>%h</strong>"
 msgstr ""
-"Kaynağı <strong>%h</strong> olarak yeniden yazın, bağlantı noktası "
-"<strong>%h</strong>"
+"Kaynağı <strong>%h</strong> olarak yeniden yazın, bağlantı noktası <strong>"
+"%h</strong>"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:108
 msgctxt "nft snat ip6 to addr:port"
@@ -7283,6 +7282,10 @@ msgid ""
 "(and advertise it in WLAN beacons). Only works if the specified network "
 "interface is a bridge. Shortens the time-critical reassociation process."
 msgstr ""
+"Sağlam Güvenlik Ağı (RSN): WPA2-EAP ağları için dolaşım ön yetkilendirmesine "
+"izin verin (ve bunu WLAN işaretlerinde tanıtın). Yalnızca belirtilen ağ "
+"arabirimi bir köprü ise çalışır. Zaman açısından kritik yeniden "
+"ilişkilendirme sürecini kısaltır."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:551
 msgid "Robustness"
@@ -7401,7 +7404,7 @@ msgstr "SNR"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:258
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:569
 msgid "SRV"
-msgstr ""
+msgstr "SRV"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/dropbear.js:10
 #: modules/luci-mod-system/root/usr/share/luci/menu.d/luci-mod-system.json:38
@@ -7649,7 +7652,7 @@ msgstr "Ayarlar"
 msgid "Setup routes for proxied IPv6 neighbours."
 msgstr "Proxy'li IPv6 komşuları için kurulum yolları."
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:30
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:31
 msgid "Severely Errored Seconds (SES)"
 msgstr "Ciddi Şekilde Hatalı Saniyeler (SES)"
 
@@ -7663,7 +7666,6 @@ msgid "Short Preamble"
 msgstr "Kısa Başlangıç"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:470
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:18
 msgid "Show current backup file list"
 msgstr "Mevcut yedekleme dosyası listesini göster"
 
@@ -7697,7 +7699,7 @@ msgstr "Sinyal"
 msgid "Signal / Noise"
 msgstr "Sinyal / Gürültü"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:25
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:26
 msgid "Signal Attenuation (SATN)"
 msgstr "Sinyal Zayıflaması (SATN)"
 
@@ -7731,12 +7733,12 @@ msgstr "Atla"
 msgid "Skip from backup files that are equal to those in /rom"
 msgstr "Yedekleme dosyalarından /rom'dakilerle aynı olanlarını atla"
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:42
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:35
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:46
 msgid "Skip to content"
 msgstr "İçeriğe geç"
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:41
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:34
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:45
 msgid "Skip to navigation"
 msgstr "Gezintiye atla"
@@ -7754,13 +7756,9 @@ msgstr "Yazılımsal VLAN"
 msgid "Some fields are invalid, cannot save values!"
 msgstr "Bazı alanlar geçersizdir, değerler kaydedilemez!"
 
-#: modules/luci-base/luasrc/view/error404.htm:9
+#: modules/luci-base/ucode/template/error404.ut:10
 msgid "Sorry, the object you requested was not found."
 msgstr "Üzgünüz, istediğiniz nesne bulunamadı."
-
-#: modules/luci-base/luasrc/view/error500.htm:9
-msgid "Sorry, the server encountered an unexpected error."
-msgstr "Üzgünüz, sunucu beklenmedik bir hatayla karşılaştı."
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:442
 msgid ""
@@ -8267,7 +8265,7 @@ msgstr "İstasyon dugunluk limiti"
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:16
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:541
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:929
-#: modules/luci-mod-status/luasrc/view/admin_status/index.htm:9
+#: modules/luci-mod-status/ucode/template/admin_status/index.ut:9
 msgid "Status"
 msgstr "Durum"
 
@@ -8367,11 +8365,11 @@ msgstr "Tarayıcı ile senkronize et"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:293
 msgid "Syntax: <code>/fqdn[/fqdn…]/[ipaddr]</code>."
-msgstr ""
+msgstr "Sözdizimi: <code>/fqdn[/fqdn…]/[ipaddr]</code>."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:569
 msgid "Syntax: <code>_service._proto.example.com</code>."
-msgstr ""
+msgstr "Sözdizimi: <code>_service._proto.example.com</code>."
 
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:26
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:17
@@ -8398,9 +8396,9 @@ msgstr "Sistem özellikleri"
 msgid "System log buffer size"
 msgstr "Sistem günlüğü arabellek boyutu"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:79
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:86
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:71
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:67
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:81
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:64
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:89
 msgid "System running in recovery (initramfs) mode."
 msgstr "Kurtarma (initramfs) modunda çalışan sistem."
@@ -8844,8 +8842,8 @@ msgstr "Ağ adı zaten kullanılıyor"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/switch.js:139
 msgid ""
-"The network ports on this device can be combined to several <abbr "
-"title=\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
+"The network ports on this device can be combined to several <abbr title="
+"\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
 "communicate directly with each other. <abbr title=\"Virtual Local Area "
 "Network\">VLAN</abbr>s are often used to separate different network "
 "segments. Often there is by default one Uplink port for a connection to the "
@@ -8912,7 +8910,7 @@ msgstr ""
 msgid "The selected %s mode is incompatible with %s encryption"
 msgstr "Seçilen %s modu, %s şifrelemesiyle uyumlu değil"
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:11
+#: modules/luci-base/ucode/template/csrftoken.ut:11
 msgid "The submitted security token is invalid or already expired!"
 msgstr "Gönderilen güvenlik jetonu geçersiz veya süresi zaten dolmuş!"
 
@@ -9013,8 +9011,8 @@ msgstr "Aktif kira yok"
 msgid "There are no changes to apply"
 msgstr "Uygulanabilecek değişiklik yok"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:70
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:62
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:58
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:55
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:80
 msgid ""
 "There is no password set on this router. Please configure a root password to "
@@ -9037,7 +9035,6 @@ msgid "This does not look like a valid PEM file"
 msgstr "Bu geçerli bir PEM dosyası gibi görünmüyor"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:16
 msgid ""
 "This is a list of shell glob patterns for matching files and directories to "
 "include during sysupgrade. Modified files in /etc/config/ and certain other "
@@ -9177,8 +9174,8 @@ msgstr "Saat dilimi"
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:440
 msgid ""
 "To fully configure the local WireGuard interface from an existing (e.g. "
-"provider supplied) configuration file, use the <strong><a class=\"full-"
-"import\" href=\"#\">configuration import</a></strong> instead."
+"provider supplied) configuration file, use the <strong><a class=\"full-import"
+"\" href=\"#\">configuration import</a></strong> instead."
 msgstr ""
 "Yerel WireGuard arayüzünü mevcut (ör. sağlayıcı tarafından sağlanan) "
 "yapılandırma dosyasından tam olarak yapılandırmak için, bunun yerine "
@@ -9348,7 +9345,7 @@ msgstr "Harici IP adresi belirlenemiyor"
 msgid "Unable to determine upstream interface"
 msgstr "Yukarı akış arayüzü belirlenemiyor"
 
-#: modules/luci-base/luasrc/view/error404.htm:11
+#: modules/luci-base/ucode/template/error404.ut:12
 msgid "Unable to dispatch"
 msgstr "Gönderilemiyor"
 
@@ -9403,7 +9400,7 @@ msgstr "İçerik kaydedilemiyor: %s"
 msgid "Unable to verify PIN"
 msgstr "PIN doğrulanamadı"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:32
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:33
 msgid "Unavailable Seconds (UAS)"
 msgstr "Kullanılamayan Saniyeler (UAS)"
 
@@ -9413,7 +9410,7 @@ msgstr "Yapılandırmayı kaldır"
 
 #: protocols/luci-proto-unet/htdocs/luci-static/resources/protocol/unet.js:8
 msgid "Unet"
-msgstr ""
+msgstr "Unet"
 
 #: modules/luci-base/htdocs/luci-static/resources/fs.js:102
 msgid "Unexpected reply data format"
@@ -9746,11 +9743,11 @@ msgstr "Kullanıcı tanımlayıcısı"
 msgid "User key (PEM encoded)"
 msgstr "Kullanıcı anahtarı (PEM kodlu)"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:23
+#: modules/luci-base/ucode/template/sysauth.ut:23
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:112
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:101
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:56
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:18
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:13
 msgid "Username"
 msgstr "Kullanıcı adı"
 
@@ -9833,7 +9830,7 @@ msgstr "VPNC (CISCO 3000 (ve diğerleri) VPN)"
 
 #: protocols/luci-proto-vti/htdocs/luci-static/resources/protocol/vti.js:10
 msgid "VTI"
-msgstr ""
+msgstr "VTI"
 
 #: protocols/luci-proto-vxlan/htdocs/luci-static/resources/protocol/vxlan.js:10
 msgid "VXLAN (RFC7348)"
@@ -9967,7 +9964,7 @@ msgstr "Güçsüz"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:589
 msgid "Weight"
-msgstr ""
+msgstr "Ağırlık"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1029
 msgid ""
@@ -10154,14 +10151,14 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:559
 msgid "You may add multiple records for the same Target."
-msgstr ""
+msgstr "Aynı Hedef için birden fazla kayıt ekleyebilirsiniz."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:596
 msgid "You may add multiple records for the same domain."
-msgstr ""
+msgstr "Aynı alan adı için birden fazla kayıt ekleyebilirsiniz."
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:90
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:97
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:78
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:92
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:73
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
@@ -10194,13 +10191,15 @@ msgstr "ZRam Boyutu"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:558
 msgid "_proto: _tcp, _udp, _sctp, _quic, … ."
-msgstr ""
+msgstr "_proto: _tcp, _udp, _sctp, _quic, … ."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:557
 msgid ""
 "_service: _sip, _ldap, _imap, _stun, _xmpp-client, … . (Note: while _http is "
 "possible, no browsers support SRV records.)"
 msgstr ""
+"_service: _sip, _ldap, _imap, _stun, _xmpp-client, … .(Not: http mümkün olsa "
+"da, hiçbir tarayıcı SRV kayıtlarını desteklemez.)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:454
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:152
@@ -10747,6 +10746,21 @@ msgstr "evet"
 msgid "« Back"
 msgstr "« Geri"
 
+#~ msgid "Back to configuration"
+#~ msgstr "Yapılandırmaya dön"
+
+#~ msgid "Close list..."
+#~ msgstr "Listeyi kapat..."
+
+#~ msgid "Internal Server Error"
+#~ msgstr "İç Sunucu Hatası"
+
+#~ msgid "No files found"
+#~ msgstr "Dosya bulunamadı"
+
+#~ msgid "Sorry, the server encountered an unexpected error."
+#~ msgstr "Üzgünüz, sunucu beklenmedik bir hatayla karşılaştı."
+
 #~ msgid "Do not forward queries that cannot be answered by public resolvers."
 #~ msgstr "Genel ad sunucuları tarafından yanıtlanamayan istekleri iletme."
 
@@ -10897,8 +10911,8 @@ msgstr "« Geri"
 
 #~ msgid ""
 #~ "<ul style=\"list-style-type:none;\"> <li><strong>server mode</strong>: "
-#~ "Router advertises itself as the default IPv6 gateway via <abbr "
-#~ "title=\"Router Advertisement, ICMPv6 Type 134\">RA</abbr> messages (to "
+#~ "Router advertises itself as the default IPv6 gateway via <abbr title="
+#~ "\"Router Advertisement, ICMPv6 Type 134\">RA</abbr> messages (to "
 #~ "<code>ff02::1</code>) and provides <abbr title=\"Prefix Delegation\">PD</"
 #~ "abbr> to downstream devices.</li> <li><strong>relay mode</strong>: Router "
 #~ "relays <abbr title=\"Router Advertisement, ICMPv6 Type 134\">RA</abbr> "
@@ -10923,12 +10937,12 @@ msgstr "« Geri"
 
 #~ msgid ""
 #~ "<ul style=\"list-style-type:none;\"> <li><strong>server mode</strong>: "
-#~ "Router assigns IPs and delegates prefixes (<abbr title=\"Prefix "
-#~ "Delegation\">PD</abbr>) to downstream interfaces.</li> <li><strong>relay "
-#~ "mode</strong>: Router relays WAN interface config downstream. Helps "
-#~ "support upstream links that lack <abbr title=\"Prefix Delegation\">PD</"
-#~ "abbr>.</li> <li><strong>hybrid mode</strong>: Router does combination of "
-#~ "server+relay.</li></ul>"
+#~ "Router assigns IPs and delegates prefixes (<abbr title=\"Prefix Delegation"
+#~ "\">PD</abbr>) to downstream interfaces.</li> <li><strong>relay mode</"
+#~ "strong>: Router relays WAN interface config downstream. Helps support "
+#~ "upstream links that lack <abbr title=\"Prefix Delegation\">PD</abbr>.</"
+#~ "li> <li><strong>hybrid mode</strong>: Router does combination of server"
+#~ "+relay.</li></ul>"
 #~ msgstr ""
 #~ "<ul style=\"list-style-type:none;\"> <li> <strong> sunucu modu </strong>: "
 #~ "Yönlendirici, IP'leri atar ve önekleri delege eder (<abbr title=\"Prefix "
@@ -11028,24 +11042,24 @@ msgstr "« Geri"
 #~ "Protocol\">NDP </abbr> Proxy'yi IPv6 için Proxy ARP olarak düşünün: aynı "
 #~ "IP alt ağına farklı fiziksel donanım segmentleri. <abbr title=\"Neighbour "
 #~ "Solicitation, Type 135\">NS </abbr> ve <abbr title=\"Neighbour "
-#~ "Advertisement, Type 136\">NA </abbr> mesajlarından oluşur. <abbr "
-#~ "title=\"Neighbour Discovery Protocol\"> NDP </abbr>-Proxy, "
-#~ "boole<code>master</code> ile işaretlenmiş bir arayüzde <abbr "
-#~ "title=\"Neighbour Solicitation, Type 135\"> NS </abbr> için dinler 1 "
-#~ "olarak (yani yukarı akış), daha sonra sonunda bir <abbr title=\"Neighbour "
-#~ "Advertisement, Type 136\"> NA </abbr> mesajı göndermeden önce bu hedef IP "
-#~ "için ikincil / dahili arayüzleri sorgular. <abbr title=\"Neighbour "
-#~ "Discovery Protocol\"> NDP </abbr>, IPv6 için etkili bir ARP'dir. <abbr "
-#~ "title=\"Neighbour Solicitation, Type 135\"> NS </abbr> ve <abbr "
-#~ "title=\"Neighbour Advertisement, Type 136\"> NA </abbr> ulaşılabilirliği "
-#~ "ve bir bağlantıdaki yinelenen adresleri algılar, kendileri de SLAAC için "
-#~ "bir önkoşuldur autoconfig. <br /> <ul style=\"list-style-type:none;\"> "
-#~ "<li> <strong>devre dışı</strong>: <abbr title=\"Neighbour Discovery "
-#~ "Protocol\"> NDP </abbr> mesajı yok <code>ndproxy_slave</code> gerçek "
-#~ "arayüzler aracılığıyla proxy yapılır. </li> <li> <strong> aktarma modu </"
-#~ "strong>: Proxy'ler <abbr title=\"Neighbour Discovery Protocol\"> NDP </"
-#~ "abbr> mesajları <code> master</code> ile <code> ndproxy_slave </code> "
-#~ "gerçek arayüzleri. <abbr title=\"Prefix Delegation\"> PD </abbr> olmadan "
+#~ "Advertisement, Type 136\">NA </abbr> mesajlarından oluşur. <abbr title="
+#~ "\"Neighbour Discovery Protocol\"> NDP </abbr>-Proxy, boole<code>master</"
+#~ "code> ile işaretlenmiş bir arayüzde <abbr title=\"Neighbour Solicitation, "
+#~ "Type 135\"> NS </abbr> için dinler 1 olarak (yani yukarı akış), daha "
+#~ "sonra sonunda bir <abbr title=\"Neighbour Advertisement, Type 136\"> NA </"
+#~ "abbr> mesajı göndermeden önce bu hedef IP için ikincil / dahili "
+#~ "arayüzleri sorgular. <abbr title=\"Neighbour Discovery Protocol\"> NDP </"
+#~ "abbr>, IPv6 için etkili bir ARP'dir. <abbr title=\"Neighbour "
+#~ "Solicitation, Type 135\"> NS </abbr> ve <abbr title=\"Neighbour "
+#~ "Advertisement, Type 136\"> NA </abbr> ulaşılabilirliği ve bir "
+#~ "bağlantıdaki yinelenen adresleri algılar, kendileri de SLAAC için bir "
+#~ "önkoşuldur autoconfig. <br /> <ul style=\"list-style-type:none;\"> <li> "
+#~ "<strong>devre dışı</strong>: <abbr title=\"Neighbour Discovery Protocol"
+#~ "\"> NDP </abbr> mesajı yok <code>ndproxy_slave</code> gerçek arayüzler "
+#~ "aracılığıyla proxy yapılır. </li> <li> <strong> aktarma modu </strong>: "
+#~ "Proxy'ler <abbr title=\"Neighbour Discovery Protocol\"> NDP </abbr> "
+#~ "mesajları <code> master</code> ile <code> ndproxy_slave </code> gerçek "
+#~ "arayüzleri. <abbr title=\"Prefix Delegation\"> PD </abbr> olmadan "
 #~ "sağlayıcı bağlantılarını ve güvenlik duvarı proxy'si olan ana "
 #~ "bilgisayarları desteklemeye yardımcı olur. </li> <li> <strong> karma mod "
 #~ "</strong>: arayüz boole <code>master</code> 1'dir. </li></ul>"
@@ -11070,14 +11084,14 @@ msgstr "« Geri"
 #~ "in <abbr title=\"Router Advertisement, ICMPv6 Type 134\">RA</abbr> "
 #~ "messages. Default is 0 (<code>0</code>). Min 1280."
 #~ msgstr ""
-#~ "<abbr title=\"Maximum Transmission Unit\"> MTU </abbr> <abbr "
-#~ "title=\"Router Advertisement, ICMPv6 Type 134\"> RA </abbr> mesajlarında "
+#~ "<abbr title=\"Maximum Transmission Unit\"> MTU </abbr> <abbr title="
+#~ "\"Router Advertisement, ICMPv6 Type 134\"> RA </abbr> mesajlarında "
 #~ "yayınlanacaktır. Varsayılan 0'dır (<code> 0 </code>). En az 1280."
 
 #~ msgid ""
-#~ "The maximum hops to be published in <abbr title=\"Router "
-#~ "Advertisement\">RA</abbr> messages.<br />Default is 0 (<code>0</code>), "
-#~ "meaning unspecified. Max 255."
+#~ "The maximum hops to be published in <abbr title=\"Router Advertisement"
+#~ "\">RA</abbr> messages.<br />Default is 0 (<code>0</code>), meaning "
+#~ "unspecified. Max 255."
 #~ msgstr ""
 #~ "<abbr title=\"Router Advertisement\"> RA </abbr> mesajlarında "
 #~ "yayınlanacak maksimum atlama sayısı.<br /> Varsayılan 0'dır (<code> 0 </"

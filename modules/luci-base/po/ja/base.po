@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:40+0200\n"
-"PO-Revision-Date: 2022-09-04 03:20+0000\n"
-"Last-Translator: yamaken <k-yamada@yamaken.jp>\n"
+"PO-Revision-Date: 2022-10-29 20:58+0000\n"
+"Last-Translator: INAGAKI Hiroshi <musashino.open@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/openwrt/luci/ja/"
 ">\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.14.2-dev\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:643
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -234,12 +234,16 @@ msgid ""
 "<code>/#/</code> matches any domain. <code>/example.com/</code> returns "
 "NXDOMAIN."
 msgstr ""
+"<code>/#/</code> は全てのドメインに一致します。 IPアドレスが空の "
+"<code>/example.com/</code> は NXDOMAIN を返します。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:295
 msgid ""
 "<code>/example.com/#</code> returns NULL addresses (<code>0.0.0.0</code> and "
 "<code>::</code>) for example.com and its subdomains."
 msgstr ""
+"<code>/example.com/#</code> は example.com とそのサブドメインに対して NULL "
+"アドレス (<code>0.0.0.0</code> 及び <code>::</code>) を返します。"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:87
 msgctxt "nft relational \">\" operator expression"
@@ -401,7 +405,7 @@ msgstr ""
 msgid "ATM device number"
 msgstr "ATMデバイス番号"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:36
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:37
 msgid "ATU-C System Vendor ID"
 msgstr "ATU-CシステムベンダーID"
 
@@ -639,7 +643,7 @@ msgstr "エージング時間"
 msgid "Aggregate Originator Messages"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:27
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:28
 msgid "Aggregate Transmit Power (ACTATP)"
 msgstr "総送信電力（ACTATP）"
 
@@ -789,7 +793,7 @@ msgid "An optional, short description for this device"
 msgstr "このデバイスの短い説明（オプション）"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1484
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:21
 msgid "Annex"
 msgstr "Annex"
 
@@ -1008,7 +1012,7 @@ msgstr "認証タイプ"
 msgid "Authoritative"
 msgstr "権威"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:17
+#: modules/luci-base/ucode/template/sysauth.ut:17
 #: themes/luci-theme-bootstrap/htdocs/luci-static/resources/view/bootstrap/sysauth.js:11
 msgid "Authorization Required"
 msgstr "ログイン"
@@ -1113,10 +1117,6 @@ msgstr ""
 msgid "Back to Overview"
 msgstr "概要へ戻る"
 
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:48
-msgid "Back to configuration"
-msgstr "設定へ戻る"
-
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:826
 msgid "Back to peer configuration"
 msgstr ""
@@ -1130,7 +1130,6 @@ msgid "Backup / Flash Firmware"
 msgstr "バックアップ/フラッシュ"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:351
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:12
 msgid "Backup file list"
 msgstr "バックアップファイルリスト"
 
@@ -1172,7 +1171,6 @@ msgid "Beacon Interval"
 msgstr "ビーコン間隔"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:352
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:46
 msgid ""
 "Below is the determined list of files to backup. It consists of changed "
 "configuration files marked by opkg, essential base files and the user "
@@ -1580,17 +1578,13 @@ msgstr ""
 "設定した秒数後に、非アクティブな接続を閉じます。0を設定した場合、接続を維持し"
 "ます"
 
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:49
-msgid "Close list..."
-msgstr "リストを閉じる..."
-
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:44
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:63
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2184
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:391
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:352
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:355
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:72
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:66
 msgid "Collecting data..."
 msgstr "データを収集中..."
 
@@ -1681,8 +1675,8 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:764
 msgid ""
-"Configures the operation mode of the <abbr title=\"Router "
-"Advertisement\">RA</abbr> service on this interface."
+"Configures the operation mode of the <abbr title=\"Router Advertisement"
+"\">RA</abbr> service on this interface."
 msgstr ""
 "このデバイスにおける <abbr title=\"Router Advertisement\">RA</abbr> サービス"
 "の動作モードを設定します。"
@@ -1862,8 +1856,8 @@ msgstr "任意の点滅間隔（kernel: timer）"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:59
 msgid ""
-"Customizes the behaviour of the device <abbr title=\"Light Emitting "
-"Diode\">LED</abbr>s if possible."
+"Customizes the behaviour of the device <abbr title=\"Light Emitting Diode"
+"\">LED</abbr>s if possible."
 msgstr ""
 "デバイスの<abbr title=\"Light Emitting Diode\">LED</abbr>の動作をカスタマイズ"
 "します（デバイスが対応している場合）。"
@@ -1969,11 +1963,11 @@ msgid "DS-Lite AFTR address"
 msgstr "DS-Lite AFTRアドレス"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1481
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:44
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:45
 msgid "DSL"
 msgstr "DSL"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:14
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:15
 msgid "DSL Status"
 msgstr "DSLステータス"
 
@@ -1991,7 +1985,7 @@ msgstr "DTIM間隔"
 msgid "DUID"
 msgstr "DUID"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:21
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:22
 msgid "Data Rate"
 msgstr "データレート"
 
@@ -2199,8 +2193,8 @@ msgid ""
 "Disable <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</abbr> for "
 "this interface."
 msgstr ""
-"このインターフェースでの<abbr title=\"Dynamic Host Configuration "
-"Protocol\">DHCP</abbr>を無効化。"
+"このインターフェースでの<abbr title=\"Dynamic Host Configuration Protocol"
+"\">DHCP</abbr>を無効化。"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:174
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:375
@@ -2297,9 +2291,9 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:246
 msgid ""
-"Dnsmasq is a lightweight <abbr title=\"Dynamic Host Configuration "
-"Protocol\">DHCP</abbr> server and <abbr title=\"Domain Name System\">DNS</"
-"abbr> forwarder."
+"Dnsmasq is a lightweight <abbr title=\"Dynamic Host Configuration Protocol"
+"\">DHCP</abbr> server and <abbr title=\"Domain Name System\">DNS</abbr> "
+"forwarder."
 msgstr ""
 "Dnsmasqは、<abbr title=\"Dynamic Host Configuration Protocol\">DHCP</abbr>"
 "サーバーと<abbr title=\"Network Address Translation\">NAT</abbr>ファイア"
@@ -2652,9 +2646,9 @@ msgstr "WPSプッシュボタンを有効にします。WPA（2）-PSK/WPA3-SAE�
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/uhttpd.js:14
 msgid ""
-"Enable automatic redirection of <abbr title=\"Hypertext Transfer "
-"Protocol\">HTTP</abbr> requests to <abbr title=\"Hypertext Transfer Protocol "
-"Secure\">HTTPS</abbr> port."
+"Enable automatic redirection of <abbr title=\"Hypertext Transfer Protocol"
+"\">HTTP</abbr> requests to <abbr title=\"Hypertext Transfer Protocol Secure"
+"\">HTTPS</abbr> port."
 msgstr ""
 "<abbr title=\"Hypertext Transfer Protocol\">HTTP</abbr> リクエストの <abbr "
 "title=\"Hypertext Transfer Protocol Secure\">HTTPS</abbr> ポートへの自動リダ"
@@ -2727,7 +2721,7 @@ msgstr "カプセル化されたパケットの DF（Don't Fragment）フラグ�
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:486
 msgid "Enable the built-in single-instance TFTP server."
-msgstr ""
+msgstr "ビルトインの単一インスタンス TFTP サーバーを有効化します。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:895
 msgid "Enable this network"
@@ -2842,7 +2836,7 @@ msgstr "エラー"
 msgid "Error getting PublicKey"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:29
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:30
 msgid "Errored seconds (ES)"
 msgstr "エラー秒数（ES）"
 
@@ -3021,8 +3015,8 @@ msgid ""
 "File listing upstream resolvers, optionally domain-specific, e.g. "
 "<code>server=1.2.3.4</code>, <code>server=/domain/1.2.3.4</code>."
 msgstr ""
-"このファイルには、特定ドメインまたは全ドメインに対する上位<abbr "
-"title=\"Domain Name System\">DNS</abbr>サーバーを指定するための、'server=/"
+"このファイルには、特定ドメインまたは全ドメインに対する上位<abbr title="
+"\"Domain Name System\">DNS</abbr>サーバーを指定するための、'server=/"
 "domain/1.2.3.4'や'server=1.2.3.4'といった行が含まれることがあります。"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2655
@@ -3197,16 +3191,16 @@ msgstr "強制アップグレード"
 msgid "Force use of NAT-T"
 msgstr "NAT-Tを強制的に使用"
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:8
+#: modules/luci-base/ucode/template/csrftoken.ut:8
 msgid "Form token mismatch"
 msgstr "フォームトークンの不一致"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:919
 msgid ""
-"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr "
-"title=\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr "
-"title=\"Neighbour Advertisement, Type 136\">NA</abbr> messages between the "
-"designated master interface and downstream interfaces."
+"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr title="
+"\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr title=\"Neighbour "
+"Advertisement, Type 136\">NA</abbr> messages between the designated master "
+"interface and downstream interfaces."
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:770
@@ -3231,7 +3225,7 @@ msgstr ""
 "マスターとして指定されたインターフェースとダウンストリーム インターフェースと"
 "の間で DHCPv6 メッセージを転送します"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:28
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:29
 msgid "Forward Error Correction Seconds (FECS)"
 msgstr "前方誤り訂正秒（FECS）"
 
@@ -3394,15 +3388,15 @@ msgstr "全体設定"
 msgid "Global network options"
 msgstr "グローバルネットワークオプション"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:82
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:89
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:74
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:70
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:84
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:67
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:92
 msgid "Go to firmware upgrade..."
-msgstr ""
+msgstr "ファームウェアのアップグレードへ移動..."
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:72
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:64
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:60
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:57
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:82
 msgid "Go to password configuration..."
 msgstr "パスワード設定へ移動..."
@@ -3543,7 +3537,7 @@ msgstr "HTTP(S) アクセス"
 msgid "Hang Up"
 msgstr "ハングアップ"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:33
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:34
 msgid "Header Error Code Errors (HEC)"
 msgstr "ヘッダーエラーコードエラー（HEC）"
 
@@ -3630,11 +3624,11 @@ msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/timer.js:19
 msgid "How long (in milliseconds) the LED should be off"
-msgstr ""
+msgstr "LED が消灯している長さ（ミリ秒）"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/timer.js:13
 msgid "How long (in milliseconds) the LED should be on"
-msgstr ""
+msgstr "LED が点灯している長さ（ミリ秒）"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:276
 msgid "Human-readable counters"
@@ -4034,15 +4028,15 @@ msgstr "チェックが付いていない場合、通知されたDNSサーバー
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:340
 msgid ""
 "If your physical memory is insufficient unused data can be temporarily "
-"swapped to a swap-device resulting in a higher amount of usable <abbr "
-"title=\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a "
-"very slow process as the swap-device cannot be accessed with the high "
-"datarates of the <abbr title=\"Random Access Memory\">RAM</abbr>."
+"swapped to a swap-device resulting in a higher amount of usable <abbr title="
+"\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a very "
+"slow process as the swap-device cannot be accessed with the high datarates "
+"of the <abbr title=\"Random Access Memory\">RAM</abbr>."
 msgstr ""
 "物理メモリが不足している場合、使用されていないデータを一時的にスワップデバイ"
 "スに移動し、<abbr title=\"Random Access Memory\">RAM</abbr>の空き容量を増やす"
-"ことができます。ただし、スワップデバイスは<abbr title=\"Random Access "
-"Memory\">RAM</abbr>に比べてとても遅いことに注意してください。"
+"ことができます。ただし、スワップデバイスは<abbr title=\"Random Access Memory"
+"\">RAM</abbr>に比べてとても遅いことに注意してください。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:368
 msgid "Ignore <code>/etc/hosts</code>"
@@ -4100,7 +4094,7 @@ msgid ""
 "order to avoid broadcast loops that can bring the entire LAN to a standstill."
 msgstr ""
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:13
+#: modules/luci-base/ucode/template/csrftoken.ut:13
 msgid ""
 "In order to prevent unauthorized access to the system, your request has been "
 "blocked. Click \"Continue »\" below to return to the previous page."
@@ -4300,10 +4294,6 @@ msgstr "インターフェース"
 msgid "Internal"
 msgstr "内部"
 
-#: modules/luci-base/luasrc/view/error500.htm:8
-msgid "Internal Server Error"
-msgstr "内部サーバーエラー"
-
 #: protocols/luci-proto-bonding/htdocs/luci-static/resources/protocol/bonding.js:285
 msgid "Interval For Sending Learning Packets"
 msgstr "学習パケット送信間隔"
@@ -4374,8 +4364,8 @@ msgstr "無効なコマンド"
 msgid "Invalid hexadecimal value"
 msgstr "無効な16進数"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:37
+#: modules/luci-base/ucode/template/sysauth.ut:12
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:32
 msgid "Invalid username and/or password! Please try again."
 msgstr ""
 "ユーザー名とパスワードのどちらかもしくは両方が間違っています！もう一度入力し"
@@ -4401,8 +4391,8 @@ msgstr ""
 "フラッシュしようとしたイメージファイルはこのフラッシュメモリー向けではありま"
 "せん。イメージファイルを確認してください！"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:89
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:96
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:77
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:91
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:72
 msgid "JavaScript required!"
 msgstr "JavaScriptが必要です！"
@@ -4544,7 +4534,7 @@ msgstr ""
 msgid "Last member interval"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:23
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:24
 msgid "Latency"
 msgstr "遅延"
 
@@ -4602,7 +4592,7 @@ msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:671
 msgid "Legacy rules detected"
-msgstr ""
+msgstr "レガシー ルールを検出"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4377
 msgid "Legend:"
@@ -4612,19 +4602,19 @@ msgstr "凡例:"
 msgid "Limit"
 msgstr "制限"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:24
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:25
 msgid "Line Attenuation (LATN)"
 msgstr "回線減衰（LATN）"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:18
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:19
 msgid "Line Mode"
 msgstr "回線モード"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:17
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:18
 msgid "Line State"
 msgstr "回線状態"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:19
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
 msgid "Line Uptime"
 msgstr "回線稼働時間"
 
@@ -4746,9 +4736,9 @@ msgid "Loading directory contents…"
 msgstr "ディレクトリの内容を読み込み中…"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:1942
-#: modules/luci-base/luasrc/view/view.htm:4
-#: modules/luci-mod-status/luasrc/view/admin_status/index.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:45
+#: modules/luci-base/ucode/template/view.ut:4
+#: modules/luci-mod-status/ucode/template/admin_status/index.ut:12
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:40
 msgid "Loading view…"
 msgstr "画面表示を読み込み中…"
 
@@ -4864,8 +4854,8 @@ msgstr ""
 msgid "Logical network to which the tunnel will be added (bridged) (optional)."
 msgstr "トンネルが追加される（ブリッジされる）論理ネットワーク（オプション）。"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:38
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:41
+#: modules/luci-base/ucode/template/sysauth.ut:38
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:36
 msgid "Login"
 msgstr "ログイン"
 
@@ -4877,7 +4867,7 @@ msgstr "ログアウト"
 msgid "Loose filtering"
 msgstr "緩いフィルタリング"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:31
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:32
 msgid "Loss of Signal Seconds (LOSS)"
 msgstr "信号損失秒数（LOSS）"
 
@@ -4885,6 +4875,10 @@ msgstr "信号損失秒数（LOSS）"
 msgid "Lowest leased address as offset from the network address."
 msgstr ""
 "これはネットワークアドレスをオフセットとした、最小のリースアドレスです。"
+
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/footer.ut:12
+msgid "Lua compatibility mode active"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:48
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:83
@@ -4999,7 +4993,7 @@ msgstr "マスター"
 msgid "Max <abbr title=\"Router Advertisement\">RA</abbr> interval"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:22
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:23
 msgid "Max. Attainable Data Rate (ATTNDR)"
 msgstr "到達可能な最大データレート（ATTNDR）"
 
@@ -5380,7 +5374,7 @@ msgstr "新規ネットワークの名前"
 msgid "Name of the tunnel device"
 msgstr ""
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:46
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:39
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:50
 msgid "Navigation"
 msgstr "ナビゲーション"
@@ -5522,9 +5516,9 @@ msgstr "NAT-Tを使用しない"
 msgid "No RX signal"
 msgstr "RX信号なし"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:80
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:87
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:72
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:68
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:82
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:65
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:90
 msgid ""
 "No changes to settings will be stored and are lost after rebooting. This "
@@ -5567,10 +5561,6 @@ msgstr "利用可能な項目はありません"
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2908
 msgid "No entries in this directory"
 msgstr "このディレクトリ内にエントリーがありません"
-
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:82
-msgid "No files found"
-msgstr "ファイルが見つかりません"
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:833
 msgid ""
@@ -5616,8 +5606,8 @@ msgstr "ネガティブキャッシュなし"
 msgid "No nftables ruleset loaded."
 msgstr ""
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:69
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:61
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:57
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:54
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:79
 msgid "No password set!"
 msgstr "パスワードが設定されていません！"
@@ -5657,7 +5647,7 @@ msgstr "割り当てられたゾーンがありません"
 msgid "Noise"
 msgstr "ノイズ"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:26
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:27
 msgid "Noise Margin (SNR)"
 msgstr "ノイズマージン（SNR）"
 
@@ -5665,7 +5655,7 @@ msgstr "ノイズマージン（SNR）"
 msgid "Noise:"
 msgstr "ノイズ:"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:34
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:35
 msgid "Non Pre-emptive CRC errors (CRC_P)"
 msgstr "非プリエンプティブCRCエラー（CRC_P）"
 
@@ -5684,7 +5674,7 @@ msgstr "なし"
 msgid "Normal"
 msgstr "標準"
 
-#: modules/luci-base/luasrc/view/error404.htm:8
+#: modules/luci-base/ucode/template/error404.ut:9
 msgid "Not Found"
 msgstr "見つかりません"
 
@@ -5821,10 +5811,9 @@ msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:676
 msgid "Open iptables rules overview…"
-msgstr ""
+msgstr "iptables ルールの概要を開く…"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:472
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:19
 msgid "Open list..."
 msgstr "リストを開く..."
 
@@ -5985,9 +5974,9 @@ msgstr "オプション"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:531
 msgid ""
 "Options for the Network-ID. (Note: needs also Network-ID.) E.g. "
-"\"<code>42,192.168.1.4</code>\" for NTP server, \"<code>3,192.168.4.4</"
-"code>\" for default route. <code>0.0.0.0</code> means \"the address of the "
-"system running dnsmasq\"."
+"\"<code>42,192.168.1.4</code>\" for NTP server, \"<code>3,192.168.4.4</code>"
+"\" for default route. <code>0.0.0.0</code> means \"the address of the system "
+"running dnsmasq\"."
 msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:125
@@ -6272,13 +6261,13 @@ msgctxt "MACVLAN mode"
 msgid "Pass-through (Mirror physical device to single MAC VLAN)"
 msgstr "パススルー（物理デバイスを単一の MAC ベース VLAN へミラー）"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:29
+#: modules/luci-base/ucode/template/sysauth.ut:29
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1690
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/password.js:51
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:114
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:103
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:58
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:24
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:19
 msgid "Password"
 msgstr "パスワード"
 
@@ -6449,7 +6438,7 @@ msgstr "Ping"
 msgid "Pkts."
 msgstr "パケット"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:19
+#: modules/luci-base/ucode/template/sysauth.ut:19
 msgid "Please enter your username and password."
 msgstr "ユーザー名とパスワードを入力してください。"
 
@@ -6484,11 +6473,11 @@ msgstr "ポートステータス:"
 msgid "Potential negation of: %s"
 msgstr "存在しない可能性があります: %s"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:37
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:38
 msgid "Power Management Mode"
 msgstr "電力管理モード"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:35
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:36
 msgid "Pre-emptive CRC errors (CRCP_P)"
 msgstr "プリエンプティブCRCエラー（CRCP_P）"
 
@@ -7057,7 +7046,7 @@ msgid "Reselection policy for primary slave"
 msgstr "プライマリスレーブの再選択ポリシー"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2197
-#: modules/luci-base/luasrc/view/sysauth.htm:39
+#: modules/luci-base/ucode/template/sysauth.ut:39
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:30
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:66
@@ -7547,7 +7536,7 @@ msgstr "設定"
 msgid "Setup routes for proxied IPv6 neighbours."
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:30
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:31
 msgid "Severely Errored Seconds (SES)"
 msgstr "重大エラー秒数（SES）"
 
@@ -7561,7 +7550,6 @@ msgid "Short Preamble"
 msgstr "ショートプリアンブル"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:470
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:18
 msgid "Show current backup file list"
 msgstr "現在のバックアップファイルリストを表示"
 
@@ -7595,7 +7583,7 @@ msgstr "信号強度"
 msgid "Signal / Noise"
 msgstr "信号強度 / ノイズ"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:25
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:26
 msgid "Signal Attenuation (SATN)"
 msgstr "信号減衰（SATN）"
 
@@ -7629,12 +7617,12 @@ msgstr "スキップ"
 msgid "Skip from backup files that are equal to those in /rom"
 msgstr ""
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:42
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:35
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:46
 msgid "Skip to content"
 msgstr "コンテンツへ移動"
 
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:41
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:34
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:45
 msgid "Skip to navigation"
 msgstr "ナビゲーションへ移動"
@@ -7652,14 +7640,10 @@ msgstr "ソフトウェア VLAN"
 msgid "Some fields are invalid, cannot save values!"
 msgstr "フィールドに無効な値が設定されているため、保存できません！"
 
-#: modules/luci-base/luasrc/view/error404.htm:9
+#: modules/luci-base/ucode/template/error404.ut:10
 msgid "Sorry, the object you requested was not found."
 msgstr ""
 "申し訳ありませんが、リクエストされたオブジェクトは見つかりませんでした。"
-
-#: modules/luci-base/luasrc/view/error500.htm:9
-msgid "Sorry, the server encountered an unexpected error."
-msgstr "申し訳ありませんが、サーバーに予期しないエラーが発生しました。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:442
 msgid ""
@@ -8131,7 +8115,7 @@ msgstr "非アクティブなステーションの制限"
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:16
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:541
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:929
-#: modules/luci-mod-status/luasrc/view/admin_status/index.htm:9
+#: modules/luci-mod-status/ucode/template/admin_status/index.ut:9
 msgid "Status"
 msgstr "ステータス"
 
@@ -8231,11 +8215,11 @@ msgstr "ブラウザと同期"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:293
 msgid "Syntax: <code>/fqdn[/fqdn…]/[ipaddr]</code>."
-msgstr ""
+msgstr "文法: <code>/fqdn[/fqdn…]/[ipaddr]</code>."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:569
 msgid "Syntax: <code>_service._proto.example.com</code>."
-msgstr ""
+msgstr "文法: <code>_service._proto.example.com</code>."
 
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:26
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:17
@@ -8262,9 +8246,9 @@ msgstr "システムプロパティ"
 msgid "System log buffer size"
 msgstr "システムログバッファサイズ"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:79
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:86
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:71
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:67
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:81
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:64
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:89
 msgid "System running in recovery (initramfs) mode."
 msgstr "システムはリカバリー (initramfs) モードで実行中です。"
@@ -8436,24 +8420,25 @@ msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/timer.js:7
 msgid "The LED blinks with the configured on/off frequency"
-msgstr ""
+msgstr "LED は設定されたオン/オフ間隔に基づいて点滅します。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/heartbeat.js:7
 msgid "The LED flashes to simulate actual heart beat."
-msgstr ""
+msgstr "LED は心拍を再現するように点滅します。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/netdev.js:8
 msgid ""
 "The LED flashes with link status and activity on the configured interface."
-msgstr ""
+msgstr "LED は、設定されたインターフェースにおけるリンク状態やアクティビティに基づい"
+"て点滅します。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/none.js:7
 msgid "The LED is always in default state off."
-msgstr ""
+msgstr "LED はデフォルトの状態で常にオフです。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/default-on.js:6
 msgid "The LED is always in default state on."
-msgstr ""
+msgstr "LED はデフォルトの状態で常にオンです。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:222
 msgid ""
@@ -8551,7 +8536,7 @@ msgstr "このシステムでは、現在以下のルールが有効です。"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/heartbeat.js:8
 msgid "The frequency is in direct proportion to 1-minute average CPU load."
-msgstr ""
+msgstr "点滅周期は1分間の平均 CPU 負荷を表します。"
 
 #: modules/luci-base/htdocs/luci-static/resources/protocol/static.js:154
 msgid "The gateway address must not be a local IP address"
@@ -8668,8 +8653,8 @@ msgstr "ネットワーク名はすでに使用されています"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/switch.js:139
 msgid ""
-"The network ports on this device can be combined to several <abbr "
-"title=\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
+"The network ports on this device can be combined to several <abbr title="
+"\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
 "communicate directly with each other. <abbr title=\"Virtual Local Area "
 "Network\">VLAN</abbr>s are often used to separate different network "
 "segments. Often there is by default one Uplink port for a connection to the "
@@ -8727,7 +8712,7 @@ msgstr ""
 msgid "The selected %s mode is incompatible with %s encryption"
 msgstr "選択された%sモードは、%s暗号化と互換性がありません"
 
-#: modules/luci-base/luasrc/view/csrftoken.htm:11
+#: modules/luci-base/ucode/template/csrftoken.ut:11
 msgid "The submitted security token is invalid or already expired!"
 msgstr "送信されたセキュリティトークンは無効または期限切れです！"
 
@@ -8808,6 +8793,9 @@ msgid ""
 "There are legacy iptables rules present on the system. Mixing iptables and "
 "nftables rules is discouraged and may lead to incomplete traffic filtering."
 msgstr ""
+"システムにレガシーな iptables ルールが存在しています。iptables と nftables の"
+"ルールの混用は、不完全なトラフィックフィルタリングを引き起こす恐れがあり、推"
+"奨されません。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:817
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:849
@@ -8820,8 +8808,8 @@ msgstr "アクティブなリースはありません"
 msgid "There are no changes to apply"
 msgstr "適用する変更はありません"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:70
-#: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:62
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:58
+#: themes/luci-theme-openwrt-2020/ucode/template/themes/openwrt2020/header.ut:55
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:80
 msgid ""
 "There is no password set on this router. Please configure a root password to "
@@ -8844,7 +8832,6 @@ msgid "This does not look like a valid PEM file"
 msgstr "これは有効なPEMファイルではないようです"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
-#: modules/luci-mod-system/luasrc/model/cbi/admin_system/backupfiles.lua:16
 msgid ""
 "This is a list of shell glob patterns for matching files and directories to "
 "include during sysupgrade. Modified files in /etc/config/ and certain other "
@@ -8977,8 +8964,8 @@ msgstr "タイムゾーン"
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:440
 msgid ""
 "To fully configure the local WireGuard interface from an existing (e.g. "
-"provider supplied) configuration file, use the <strong><a class=\"full-"
-"import\" href=\"#\">configuration import</a></strong> instead."
+"provider supplied) configuration file, use the <strong><a class=\"full-import"
+"\" href=\"#\">configuration import</a></strong> instead."
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2674
@@ -9022,7 +9009,7 @@ msgstr "トラフィッククラス"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:522
 msgid "Traffic filter chain \"%h\""
-msgstr ""
+msgstr "トラフィックフィルター チェーン \"%h\""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:460
 msgctxt "nft counter"
@@ -9143,7 +9130,7 @@ msgstr "外部IPアドレスを確定できません"
 msgid "Unable to determine upstream interface"
 msgstr "アップストリーム インターフェースを確定できません"
 
-#: modules/luci-base/luasrc/view/error404.htm:11
+#: modules/luci-base/ucode/template/error404.ut:12
 msgid "Unable to dispatch"
 msgstr "ディスパッチできません"
 
@@ -9198,7 +9185,7 @@ msgstr "内容を保存できません: %s"
 msgid "Unable to verify PIN"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:32
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:33
 msgid "Unavailable Seconds (UAS)"
 msgstr "使用不可秒数（UAS）"
 
@@ -9509,8 +9496,8 @@ msgid ""
 "Used for two different purposes: RADIUS NAS ID and 802.11r R0KH-ID. Not "
 "needed with normal WPA(2)-PSK."
 msgstr ""
-"RADIUS NAS IDと802.11r R0KH-IDの2つの異なる目的のために使用中です。通常のWPA"
-"（2）-PSKは必要ありません。"
+"RADIUS NAS IDと802.11r R0KH-IDの2つの異なる目的のために使用中です。通常の"
+"WPA（2）-PSKは必要ありません。"
 
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:111
 msgid "User Group"
@@ -9530,11 +9517,11 @@ msgstr ""
 msgid "User key (PEM encoded)"
 msgstr "ユーザー鍵（PEMエンコード）"
 
-#: modules/luci-base/luasrc/view/sysauth.htm:23
+#: modules/luci-base/ucode/template/sysauth.ut:23
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:112
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:101
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:56
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:18
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/sysauth.ut:13
 msgid "Username"
 msgstr "ユーザー名"
 
@@ -9926,8 +9913,8 @@ msgstr ""
 msgid "You may add multiple records for the same domain."
 msgstr ""
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:90
-#: themes/luci-theme-material/luasrc/view/themes/material/header.htm:97
+#: themes/luci-theme-bootstrap/ucode/template/themes/bootstrap/header.ut:78
+#: themes/luci-theme-material/ucode/template/themes/material/header.ut:92
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:73
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
@@ -10513,6 +10500,21 @@ msgstr "はい"
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:20
 msgid "« Back"
 msgstr "« 戻る"
+
+#~ msgid "Back to configuration"
+#~ msgstr "設定へ戻る"
+
+#~ msgid "Close list..."
+#~ msgstr "リストを閉じる..."
+
+#~ msgid "Internal Server Error"
+#~ msgstr "内部サーバーエラー"
+
+#~ msgid "No files found"
+#~ msgstr "ファイルが見つかりません"
+
+#~ msgid "Sorry, the server encountered an unexpected error."
+#~ msgstr "申し訳ありませんが、サーバーに予期しないエラーが発生しました。"
 
 #~ msgid "Do not forward queries that cannot be answered by public resolvers."
 #~ msgstr "パブリックDNSサーバーが応答できないリクエストを転送しない"
