@@ -52,8 +52,6 @@ LUCI_LANG.uk=Українська (Ukrainian)
 LUCI_LANG.vi=Tiếng Việt (Vietnamese)
 LUCI_LANG.zh_Hans=简体中文 (Chinese Simplified)
 LUCI_LANG.zh_Hant=繁體中文 (Chinese Traditional)
-LUCI_LANG.zh-cn=$(LUCI_LANG.zh_Hans)
-LUCI_LANG.zh-tw=$(LUCI_LANG.zh_Hant)
 
 # Submenu titles
 LUCI_MENU.col=1. Collections
@@ -69,8 +67,6 @@ LUCI_LC_ALIAS.nb_NO=no
 LUCI_LC_ALIAS.pt_BR=pt-br
 LUCI_LC_ALIAS.zh_Hans=zh-cn
 LUCI_LC_ALIAS.zh_Hant=zh-tw
-LUCI_LC_ALIAS.zh-cn=zh-cn
-LUCI_LC_ALIAS.zh-tw=zh-tw
 
 # Default locations
 HTDOCS = /www
@@ -300,8 +296,8 @@ ifeq ($(PKG_NAME),luci-base)
 	default y
 
    config LUCI_CSSTIDY
-        bool "Minify CSS files"
-        default n
+	bool "Minify CSS files"
+	default y
 
    menu "Translations"$(foreach lang,$(LUCI_LANGUAGES),$(if $(LUCI_LANG.$(lang)),
 
@@ -323,13 +319,7 @@ define LuciTranslation
     CATEGORY:=LuCI
     TITLE:=$(PKG_NAME) - $(1) translation
     HIDDEN:=1
-	ifeq ($(2),zh-cn)
-		DEFAULT:=LUCI_LANG_zh_Hans||(ALL&&m)
-	else ifeq ($(2),zh-tw)
-		DEFAULT:=LUCI_LANG_zh_Hant||(ALL&&m)
-	else
-		DEFAULT:=LUCI_LANG_$(2)||(ALL&&m)
-	endif
+    DEFAULT:=LUCI_LANG_$(2)||(ALL&&m)
     DEPENDS:=$(PKG_NAME)
     VERSION:=$(PKG_PO_VERSION)
     PKGARCH:=all

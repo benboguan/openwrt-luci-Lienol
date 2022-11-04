@@ -184,7 +184,7 @@ function parseList(s, dest)
 			val = RegExp.$2.trim();
 		}
 		else if (pkg) {
-			dest.pkgs[pkg.name] = dest.pkgs[pkg.name] ? dest.pkgs[pkg.name] : pkg;
+			dest.pkgs[pkg.name] = pkg;
 
 			var provides = dest.providers[pkg.name] ? [] : [ pkg.name ];
 
@@ -248,7 +248,7 @@ function display(pattern)
 			var avail = packages.available.pkgs[name],
 			    inst  = packages.installed.pkgs[name];
 
-			if (!inst || !inst.installed || pkg.name.includes('kmod-') || pkg.name.includes('busybox') || pkg.name.includes('base-files'))
+			if (!inst || !inst.installed)
 				continue;
 
 			if (!avail || compareVersion(avail.version, pkg.version) <= 0)
@@ -607,7 +607,7 @@ function renderDependencies(depends, info, flat)
 		if (deps[i] === 'libc')
 			continue;
 
-		if (deps[i].match(/^(.+)\s+\((<=|>=|<<|>>|<|>|=)(.+)\)$/)) {
+		if (deps[i].match(/^(.+?)\s+\((<=|>=|<<|>>|<|>|=)(.+?)\)/)) {
 			dep = RegExp.$1.trim();
 			vop = RegExp.$2.trim();
 			ver = RegExp.$3.trim();

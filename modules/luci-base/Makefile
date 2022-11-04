@@ -24,8 +24,7 @@ LUCI_DEPENDS:=\
 	+ucode-mod-ubus \
 	+ucode-mod-math \
 	+ucode-mod-html \
-	+liblucihttp-ucode \
-	+@LUCI_LANG_zh_Hans
+	+liblucihttp-ucode
 
 PKG_LICENSE:=MIT
 
