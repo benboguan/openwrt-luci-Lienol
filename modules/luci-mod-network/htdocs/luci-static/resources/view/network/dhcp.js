@@ -316,7 +316,7 @@ return view.extend({
 		o = s.taboption('general', form.DynamicList, 'address',
 			_('Addresses'),
 			_('Resolve specified FQDNs to an IP.') + '<br />' +
-			_('Syntax: <code>/fqdn[/fqdn…]/[ipaddr]</code>.') + '<br />' +
+			_('Syntax: <code>/fqdn[/fqdnâ€¦]/[ipaddr]</code>.') + '<br />' +
 			_('<code>/#/</code> matches any domain. <code>/example.com/</code> returns NXDOMAIN.') + '<br />' +
 			_('<code>/example.com/#</code> returns NULL addresses (<code>0.0.0.0</code> and <code>::</code>) for example.com and its subdomains.'));
 		o.optional = true;
@@ -464,6 +464,12 @@ return view.extend({
 			_('Filter IPv6(AAAA) DNS Query Name Resolve'));
 		o.optional = true;
 
+		o = s.taboption('advanced', form.Flag, 'filter_a',
+			_('Disable IPv4 DNS forwards'),
+			_('Filter IPv4(A) DNS Query Name Resolve'));
+		o.optional = true;
+		o.depends('filter_aaaa', '0');
+
 		o = s.taboption('advanced', form.Flag, 'quietdhcp',
 			_('Suppress logging'),
 			_('Suppress logging of the routine operation for the DHCP protocol.'));
@@ -572,6 +578,13 @@ return view.extend({
 		o.datatype = 'range(0,10000)';
 		o.placeholder = 150;
 
+		o = s.taboption('advanced', form.Value, 'mini_ttl',
+			_('Minimum TTL to send to clients'),
+			_('Modify DNS entries minimum TTL (max is 86400, 0 is no modify)'));
+		o.optional = true;
+		o.datatype = 'range(0,86400)';
+		o.placeholder = 0;
+
 		o = s.taboption('pxe_tftp', form.Flag, 'enable_tftp',
 			_('Enable TFTP server'),
 			_('Enable the built-in single-instance TFTP server.'));
@@ -645,8 +658,8 @@ return view.extend({
 
 		o = s.taboption('srvhosts', form.SectionValue, '__srvhosts__', form.TableSection, 'srvhost', null,
 			_('Bind service records to a domain name: specify the location of services. See <a href="%s">RFC2782</a>.').format('https://datatracker.ietf.org/doc/html/rfc2782')
-			+ '<br />' + _('_service: _sip, _ldap, _imap, _stun, _xmpp-client, … . (Note: while _http is possible, no browsers support SRV records.)')
-			+ '<br />' + _('_proto: _tcp, _udp, _sctp, _quic, … .')
+			+ '<br />' + _('_service: _sip, _ldap, _imap, _stun, _xmpp-client, â€¦ . (Note: while _http is possible, no browsers support SRV records.)')
+			+ '<br />' + _('_proto: _tcp, _udp, _sctp, _quic, â€¦ .')
 			+ '<br />' + _('You may add multiple records for the same Target.')
 			+ '<br />' + _('Larger weights (of the same prio) are given a proportionately higher probability of being selected.'));
 
