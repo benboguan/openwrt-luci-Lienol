@@ -27,6 +27,7 @@ LUCI_LANG.cs=Čeština (Czech)
 LUCI_LANG.da=Dansk (Danish)
 LUCI_LANG.de=Deutsch (German)
 LUCI_LANG.el=Ελληνικά (Greek)
+LUCI_LANG.en=English
 LUCI_LANG.es=Español (Spanish)
 LUCI_LANG.fi=Suomi (Finnish)
 LUCI_LANG.fr=Français (French)
@@ -114,10 +115,10 @@ PKG_SRC_VERSION?=$(if $(DUMP),x,$(strip $(call findrev,1)))
 PKG_GITBRANCH?=$(if $(DUMP),x,$(strip $(shell \
 	variant="LuCI"; \
 	if git log -1 >/dev/null 2>/dev/null; then \
-		branch=$$(git branch --format='%(refname:strip=3)' --remote --no-abbrev --contains 2>/dev/null | tail -n1); \
-		branch=$${branch:-$$(git branch --format='%(refname:strip=2)' --no-abbrev --contains 2>/dev/null | tail -n1)}; \
+		branch="$$(git branch --remote --verbose --no-abbrev --contains 2>/dev/null | \
+			sed -rne 's|^[^/]+/([^ ]+) [a-f0-9]{40} .+$$|\1|p' | head -n1)"; \
 		if [ "$$branch" != "master" ]; then \
-			variant="LuCI $${branch:-unknown} branch"; \
+			variant="LuCI $$branch branch"; \
 		else \
 			variant="LuCI Master"; \
 		fi; \
