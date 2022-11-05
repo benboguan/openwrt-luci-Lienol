@@ -423,23 +423,8 @@ function build_pagetree() {
 	return tree;
 }
 
-function apply_tree_acls(node, acl) {
-	for (let name, spec in node?.children)
-		apply_tree_acls(spec, acl);
-
-	if (node?.depends?.acl) {
-		switch (check_acl_depends(node.depends.acl, acl["access-group"])) {
-		case null:  node.satisfied = false; break;
-		case false: node.readonly = true;   break;
-		}
-	}
-}
-
 function menu_json(acl) {
 	tree ??= build_pagetree();
-
-	if (acl)
-		apply_tree_acls(tree, acl);
 
 	return tree;
 }
@@ -764,13 +749,6 @@ function rollback_pending() {
 
 let dispatch;
 
-function render_action(fn) {
-	const data = render(fn);
-
-	http.write_headers();
-	http.output(data);
-}
-
 function run_action(request_path, lang, tree, resolved, action) {
 	switch (action?.type) {
 	case 'template':
@@ -782,12 +760,12 @@ function run_action(request_path, lang, tree, resolved, action) {
 		break;
 
 	case 'call':
-		render_action(() => {
+		http.write(render(() => {
 			runtime.call(action.module, action.function,
 				...(action.parameters ?? []),
 				...resolved.ctx.request_args
 			);
-		});
+		}));
 		break;
 
 	case 'function':
@@ -796,30 +774,30 @@ function run_action(request_path, lang, tree, resolved, action) {
 		assert(type(mod[action.function]) == 'function',
 			`Module '${action.module}' does not export function '${action.function}'`);
 
-		render_action(() => {
+		http.write(render(() => {
 			call(mod[action.function], mod, runtime.env,
 				...(action.parameters ?? []),
 				...resolved.ctx.request_args
 			);
-		});
+		}));
 		break;
 
 	case 'cbi':
-		render_action(() => {
+		http.write(render(() => {
 			runtime.call('luci.dispatcher', 'invoke_cbi_action',
 				action.path, null,
 				...resolved.ctx.request_args
 			);
-		});
+		}));
 		break;
 
 	case 'form':
-		render_action(() => {
+		http.write(render(() => {
 			runtime.call('luci.dispatcher', 'invoke_form_action',
 				action.path,
 				...resolved.ctx.request_args
 			);
-		});
+		}));
 		break;
 
 	case 'alias':

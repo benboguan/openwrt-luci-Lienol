@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2022-11-04 10:26+0000\n"
-"Last-Translator: fodiator <weblate@fodiator.com>\n"
+"PO-Revision-Date: 2021-05-29 16:19+0000\n"
+"Last-Translator: Jonathan Mohamed <jonathanmohamed34@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/openwrt/"
 "lucimodulesluci-mod-dashboard/nl/>\n"
 "Language: nl\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:163
 msgid "Active"
@@ -21,38 +21,35 @@ msgid "Architecture"
 msgstr "Architectuur"
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:181
-#, fuzzy
 msgid "BSSID"
-msgstr "BSSID"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:175
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:243
 msgid "Bitrate"
-msgstr "Bitrate"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:169
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:234
 msgid "Channel"
-msgstr "Kanaal"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:177
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:217
 msgid "Connected"
-msgstr "Verbonden"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/20_lan.js:13
 msgid "DHCP Devices"
-msgstr "DHCP Apparaten"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:207
-#, fuzzy
 msgid "DNSv4"
-msgstr "DNSv4"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/10_router.js:253
-#, fuzzy
 msgid "DNSv6"
-msgstr "DNSv6"
+msgstr ""
 
 #: modules/luci-mod-dashboard/root/usr/share/luci/menu.d/luci-mod-dashboard.json:3
 msgid "Dashboard"
@@ -60,19 +57,19 @@ msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/20_lan.js:134
 msgid "Devices"
-msgstr "Apparaten"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:193
 msgid "Devices Connected"
-msgstr "Verbonden Apparaten"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:86
 msgid "Down."
-msgstr "Uitgeschakeld."
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/20_lan.js:129
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 #: modules/luci-mod-dashboard/htdocs/luci-static/resources/view/dashboard/include/30_wifi.js:187
 msgid "Encryption"

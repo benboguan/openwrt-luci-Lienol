@@ -432,7 +432,7 @@ const Class = {
 				let data = value.fd.read(1024);
 				let eof = (data == null || data == '');
 
-				this.filehandler(value, data, eof);
+				callback(value, data, eof);
 
 				if (eof) {
 					value.fd.close();
@@ -524,7 +524,7 @@ const Class = {
 
 	// If the content chunk is nil this function will automatically invoke close.
 	write: function(content) {
-		if (content != null && !this.closed) {
+		if (content != null) {
 			this.write_headers();
 			this.output(content);
 

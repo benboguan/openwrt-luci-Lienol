@@ -43,19 +43,13 @@ function format_lua_exception(ex) {
 }
 
 const Class = {
-	init_lua: function(optional) {
+	init_lua: function() {
 		if (!this.L) {
-			let bridge = this.env.dispatcher.load_luabridge(optional);
+			this.L = this.env.dispatcher.load_luabridge().create();
+			this.L.set('L', proto({ write: print }, this.env));
+			this.L.invoke('require', 'luci.ucodebridge');
 
-			if (bridge) {
-				let http = this.env.http;
-
-				this.L = bridge.create();
-				this.L.set('L', proto({ write: (...args) => http.closed || print(...args) }, this.env));
-				this.L.invoke('require', 'luci.ucodebridge');
-
-				this.env.lua_active = true;
-			}
+			this.env.lua_active = true;
 		}
 
 		return this.L;
@@ -63,11 +57,7 @@ const Class = {
 
 	render_ucode: function(path, scope) {
 		let tmplfunc = loadfile(path, { raw_mode: false });
-
-		if (this.env.http.closed)
-			render(call, tmplfunc, null, scope ?? {});
-		else
-			call(tmplfunc, null, scope ?? {});
+		call(tmplfunc, null, scope ?? {});
 	},
 
 	render_lua: function(path, scope) {
@@ -90,12 +80,10 @@ const Class = {
 		}
 		else {
 			try {
-				let vm = this.init_lua(true);
+				let vm = this.init_lua();
+				let compile = vm.get('_G', 'luci', 'ucodebridge', 'compile');
 
-				if (vm)
-					vm.get('_G', 'luci', 'ucodebridge', 'compile').call(path);
-				else
-					return `Unable to compile '${path}' as Lua template: Unable to load Lua runtime`;
+				compile.call(path);
 			}
 			catch (lua_err) {
 				return `Unable to compile '${path}' as Lua template: ${format_lua_exception(lua_err)}`;
