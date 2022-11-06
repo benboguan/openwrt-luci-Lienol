@@ -10475,6 +10475,9 @@ msgstr "是"
 msgid "« Back"
 msgstr "« 后退"
 
+msgid "Online Users"
+msgstr "在线用户数"
+
 #~ msgid "Back to configuration"
 #~ msgstr "返回至配置"
 
