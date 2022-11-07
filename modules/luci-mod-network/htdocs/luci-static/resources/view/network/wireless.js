@@ -955,10 +955,31 @@ return view.extend({
 					o.value('1', _('Normal'));
 					o.value('2', _('High'));
 					o.value('3', _('Very High'));
-					
+
+					o = ss.taboption('advanced', form.Flag, 'su_beamformee', _('SU-Beamforming'));
+					o.depends({'_freq': '2g', '!contains': true});
+					o.default = o.disabled;
+
+					o = ss.taboption('advanced', form.Flag, 'su_beamformer', _('SU-MIMO'));
+					o.depends({'_freq': '2g', '!contains': true});
+					o.default = o.disabled;
+
+					o = ss.taboption('advanced', form.Flag, 'mu_beamformee', _('MU-Beamforming'));
+					o.depends({'_freq': '5g', '!contains': true});
+					o.default = o.disabled;
+
 					o = ss.taboption('advanced', form.Flag, 'mu_beamformer', _('MU-MIMO'));
-					o.rmempty = false;
-					o.default = '0';
+					o.depends({'_freq': '5g', '!contains': true});
+					o.default = o.disabled;
+
+					o = ss.taboption('advanced', form.Flag, 'ldpc', _('LDPC'));
+					o.depends({'_freq': '2g', '!contains': true});
+
+					o = ss.taboption('advanced', form.Flag, 'rxldpc', _('LDPC'));
+					o.depends({'_freq': '5g', '!contains': true});
+
+					o = ss.taboption('advanced', form.Flag, 'tx_burst', _('Tx Bursting'));
+					o.default = o.disabled;
 
 					o = ss.taboption('advanced', form.Value, 'distance', _('Distance Optimization'), _('Distance to farthest network member in meters.'));
 					o.datatype = 'or(range(0,114750),"auto")';
@@ -972,16 +993,16 @@ return view.extend({
 					o.datatype = 'uinteger';
 					o.placeholder = _('off');
 
-					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
+					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40/80MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
 					o.rmempty = true;
+
+					o = ss.taboption('advanced', form.Flag, 'vendor_vht', _('Enable 256-QAM'), _('802.11n 2.4Ghz Only'));
+					o.depends({'_freq': '2g', '!contains': true});
 
 					o = ss.taboption('advanced', form.Value, 'beacon_int', _('Beacon Interval'));
 					o.datatype = 'range(15,65535)';
 					o.placeholder = 100;
 					o.rmempty = true;
-					
-					o = ss.taboption('advanced', form.Flag, 'vendor_vht', _('Enable 256-QAM'), _('802.11n 2.4Ghz Only'));
-					o.default = o.disabled;
 				}
 
 
@@ -1144,6 +1165,10 @@ return view.extend({
 						return mode;
 					};
 
+					o = ss.taboption('general', form.Flag, 'doth', _('80211.h'));
+					o.depends('mode', 'ap');
+					o.default = o.disabled;
+
 					o = ss.taboption('general', form.Flag, 'hidden', _('Hide <abbr title="Extended Service Set Identifier">ESSID</abbr>'), _('Where the ESSID is hidden, clients may fail to roam and airtime efficiency may be significantly reduced.'));
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
@@ -1152,6 +1177,11 @@ return view.extend({
 					o.depends('mode', 'ap');
 					o.depends('mode', 'ap-wds');
 					o.default = o.enabled;
+
+					/* https://w1.fi/cgit/hostap/commit/?id=34f7c699a6bcb5c45f82ceb6743354ad79296078  */
+					/* multicast_to_unicast https://github.com/openwrt/openwrt/commit/7babb978ad9d7fc29acb1ff86afb1eb343af303a */
+					o = ss.taboption('advanced', form.Flag, 'multicast_to_unicast', _('Multi To Unicast'), _('ARP, IPv4 and IPv6 (even 802.1Q) with multicast destination MACs are unicast to the STA MAC address. Note: This is not Directed Multicast Service (DMS) in 802.11v. Note: might break receiver STA multicast expectations.'));
+					o.rmempty = true;
 
 					o = ss.taboption('advanced', form.Flag, 'isolate', _('Isolate Clients'), _('Prevents client-to-client communication'));
 					o.depends('mode', 'ap');
@@ -1454,6 +1484,10 @@ return view.extend({
 				o.rmempty = true;
 				o.password = true;
 
+				//WPA(1) has only WPA IE. Only >= WPA2 has RSN IE Preauth frames.
+				o = ss.taboption('encryption', form.Flag, 'rsn_preauth', _('RSN Preauth'), _('Robust Security Network (RSN): Allow roaming preauth for WPA2-EAP networks (and advertise it in WLAN beacons). Only works if the specified network interface is a bridge. Shortens the time-critical reassociation process.'));
+				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa2', 'wpa3', 'wpa3-mixed'] });
+
 
 				o = ss.taboption('encryption', form.Value, '_wpa_key', _('Key'));
 				o.depends('encryption', 'psk');
@@ -1516,62 +1550,77 @@ return view.extend({
 				if (hwtype == 'mac80211') {
 					// Probe 802.11k support
 					o = ss.taboption('encryption', form.Flag, 'ieee80211k', _('802.11k'), _('Enables The 802.11k standard provides information to discover the best available access point'));
-					o.depends({ mode : 'ap', encryption : 'wpa' });
-					o.depends({ mode : 'ap', encryption : 'wpa2' });
-					o.depends({ mode : 'ap-wds', encryption : 'wpa' });
-					o.depends({ mode : 'ap-wds', encryption : 'wpa2' });
-					o.depends({ mode : 'ap', encryption : 'psk' });
-					o.depends({ mode : 'ap', encryption : 'psk2' });
-					o.depends({ mode : 'ap', encryption : 'psk-mixed' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk2' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'wpa' });
+					o.depends({ mode: 'ap', encryption: 'wpa2' });
+					o.depends({ mode: 'ap', encryption: 'wpa3' });
+					o.depends({ mode: 'ap', encryption: 'wpa3-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa3' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa3-mixed' });
+					o.depends({ mode: 'ap', encryption: 'psk' });
+					o.depends({ mode: 'ap', encryption: 'psk2' });
+					o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'sae' });
+					o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk2' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.Flag, 'rrm_neighbor_report', _('Enable neighbor report via radio measurements'));
 					o.default = o.enabled;
-					o.depends({ ieee80211k : '1' });
+					o.depends({ ieee80211k: '1' });
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.Flag, 'rrm_beacon_report', _('Enable beacon report via radio measurements'));
 					o.default = o.enabled;
-					o.depends({ ieee80211k : '1' });
+					o.depends({ ieee80211k: '1' });
 					o.rmempty = true;
 					// End of 802.11k options
 
 					// Probe 802.11v support
 					o = ss.taboption('encryption', form.Flag, 'ieee80211v', _('802.11v'), _('Enables 802.11v allows client devices to exchange information about the network topology,tating overall improvement of the wireless network.'));
-					o.depends({ mode : 'ap', encryption : 'wpa' });
-					o.depends({ mode : 'ap', encryption : 'wpa2' });
-					o.depends({ mode : 'ap-wds', encryption : 'wpa' });
-					o.depends({ mode : 'ap-wds', encryption : 'wpa2' });
-					o.depends({ mode : 'ap', encryption : 'psk' });
-					o.depends({ mode : 'ap', encryption : 'psk2' });
-					o.depends({ mode : 'ap', encryption : 'psk-mixed' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk2' });
-					o.depends({ mode : 'ap-wds', encryption : 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'wpa' });
+					o.depends({ mode: 'ap', encryption: 'wpa2' });
+					o.depends({ mode: 'ap', encryption: 'wpa3' });
+					o.depends({ mode: 'ap', encryption: 'wpa3-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa3' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa3-mixed' });
+					o.depends({ mode: 'ap', encryption: 'psk' });
+					o.depends({ mode: 'ap', encryption: 'psk2' });
+					o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'sae' });
+					o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk2' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
 					o.rmempty = true;
-
 
 					o = ss.taboption('encryption', form.Flag, 'wnm_sleep_mode', _('extended sleep mode for stations'));
 					o.default = o.disabled;
-					o.depends({ ieee80211v : '1' });
+					o.depends({ ieee80211v: '1' });
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.Flag, 'bss_transition', _('BSS Transition Management'));
 					o.default = o.disabled;
-					o.depends({ ieee80211v : '1' });
+					o.depends({ ieee80211v: '1' });
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.ListValue, 'time_advertisement', _('Time advertisement'));
-					o.depends({ ieee80211v : '1' });
+					o.depends({ ieee80211v: '1' });
 					o.value('0', _('disabled'));
 					o.value('2', _('UTC time at which the TSF timer is 0'));
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.Value, 'time_zone', _('time zone'), _('Local time zone as specified in 8.3 of IEEE Std 1003.1-2004'));
-					o.depends({ time_advertisement : '2' });
+					o.depends({ time_advertisement: '2' });
 					o.placeholder = 'UTC8';
 					o.rmempty = true;
 					// End of 802.11v options
