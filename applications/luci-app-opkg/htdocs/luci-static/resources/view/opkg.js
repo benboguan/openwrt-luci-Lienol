@@ -370,6 +370,12 @@ function handleMode(ev)
 
 	currentDisplayMode = tab.getAttribute('data-mode');
 
+	if (currentDisplayMode == "updates"){
+	var filterv = document.querySelector('input[name="filter"]')
+	if ( filterv.value == "luci-app-")
+		filterv.value = ""
+	}
+
 	display(document.querySelector('input[name="filter"]').value);
 
 	ev.target.blur();
@@ -1027,7 +1033,7 @@ return view.extend({
 				E('div', {}, [
 					E('label', {}, _('Filter') + ':'),
 					E('span', { 'class': 'control-group' }, [
-						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': query, 'input': handleInput }),
+						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': 'luci-app-', 'input': handleInput }),
 						E('button', { 'class': 'btn cbi-button', 'click': handleReset }, [ _('Clear') ])
 					])
 				]),
@@ -1044,6 +1050,7 @@ return view.extend({
 					E('label', {}, _('Actions') + ':'), ' ',
 					E('span', { 'class': 'control-group' }, [
 						E('button', { 'class': 'btn cbi-button-positive', 'data-command': 'update', 'click': handleOpkg, 'disabled': isReadonlyView }, [ _('Update lists…') ]), ' ',
+						E('button', { 'class': 'btn cbi-button-negative', 'data-command': 'upgradeall', 'click': handleOpkg, 'disabled': isReadonlyView }, [ _('Upgrade all…') ]), ' ',
 						E('button', { 'class': 'btn cbi-button-action', 'click': handleUpload, 'disabled': isReadonlyView }, [ _('Upload Package…') ]), ' ',
 						E('button', { 'class': 'btn cbi-button-neutral', 'click': handleConfig }, [ _('Configure opkg…') ])
 					])
