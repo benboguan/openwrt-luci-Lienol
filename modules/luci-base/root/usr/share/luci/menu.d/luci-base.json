@@ -32,8 +32,8 @@
 		}
 	},
 
-	"admin/services": {
-		"title": "Services",
+	"admin/nas": {
+		"title": "NAS",
 		"order": 30,
 		"action": {
 			"type": "firstchild",
@@ -41,18 +41,9 @@
 		}
 	},
 
-	"admin/nas": {
-		"title": "NAS",
+	"admin/services": {
+		"title": "Services",
 		"order": 40,
-		"action": {
-			"type": "firstchild",
-			"recurse": true
-		}
-	},
-
-	"admin/vpn": {
-		"title": "VPN",
-		"order": 50,
 		"action": {
 			"type": "firstchild",
 			"recurse": true
@@ -61,7 +52,16 @@
 
 	"admin/network": {
 		"title": "Network",
-		"order": 60,
+		"order": 50,
+		"action": {
+			"type": "firstchild",
+			"recurse": true
+		}
+	},
+
+	"admin/vpn": {
+		"title": "VPN",
+		"order": 70,
 		"action": {
 			"type": "firstchild",
 			"recurse": true
