@@ -164,6 +164,3 @@ stop(){
 	  rm -f /tmp/dnsmasq.d/dnsmasq-mwan3.conf
     /etc/init.d/dnsmasq restart
 }
-
-
-

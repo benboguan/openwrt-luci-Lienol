@@ -1,5 +1,3 @@
-#!/bin/sh /etc/rc.common
-
 ipset -N $1 hash:net 2>/dev/null
 
 echo "create $1 hash:net family inet hashsize 1024 maxelem 65536" > /tmp/mwan3.ipset
