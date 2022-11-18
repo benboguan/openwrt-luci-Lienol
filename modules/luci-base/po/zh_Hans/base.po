@@ -7864,6 +7864,33 @@ msgstr "强"
 msgid "Submit"
 msgstr "提交"
 
+msgid "Disable IPv6 DNS forwards"
+msgstr "禁止解析 IPv6 DNS 记录"
+
+msgid "Filter IPv6(AAAA) DNS Query Name Resolve"
+msgstr "过滤掉 IPv6(AAAA) ，只返回 IPv4 DNS 域名记录"
+
+msgid "Minimum TTL to send to clients"
+msgstr "客户端缓存的最小 DNS TTL"
+
+msgid "Modify DNS entries minimum TTL (max is 86400, 0 is no modify)"
+msgstr "修改发送到客户端的域名记录的 TTL 时间 (最大 86400, 0 表示不修改)"
+
+msgid "Remove IPv6 addresses from the results and only return IPv4 addresses."
+msgstr "从结果中删除 IPv6 地址并仅返回 IPv4 地址。"
+
+msgid "Can be useful if ISP has IPv6 nameservers but does not provide IPv6 routing."
+msgstr "如果 ISP 有 IPv6 名称服务器但不提供 IPv6 路由，则可能很有用。"
+
+msgid "Disable IPv4 DNS forwards"
+msgstr "禁止解析 IPv4 DNS 记录"
+
+msgid "Filter IPv4(A) DNS Query Name Resolve"
+msgstr "过滤掉 IPv4(A) ，只返回 IPv4 DNS 域名记录"
+
+msgid "Remove IPv4 addresses from the results and only return IPv6 addresses."
+msgstr "从结果中删除 IPv4 地址并仅返回 IPv6 地址。"
+
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:372
 msgid "Suppress logging"
 msgstr "不记录日志"
@@ -10062,39 +10089,5 @@ msgstr "是"
 msgid "« Back"
 msgstr "« 后退"
 
-msgid "Online Users"
-msgstr "在线用户数"
-
-msgid "Minimum TTL to send to clients"
-msgstr "客户端缓存的最小 DNS TTL"
-
-msgid "Modify DNS entries minimum TTL (max is 86400, 0 is no modify)"
-msgstr "修改发送到客户端的域名记录的 TTL 时间 (最大 86400, 0 表示不修改)"
-
-msgid "Disable IPv6 DNS forwards"
-msgstr "禁止解析 IPv6 DNS 记录"
-
-msgid "Filter IPv6(AAAA) DNS Query Name Resolve"
-msgstr "过滤掉 IPv6(AAAA) ，只返回 IPv4 DNS 域名记录"
-
-msgid "Remove IPv6 addresses from the results and only return IPv4 addresses."
-msgstr "从结果中删除 IPv6 地址并仅返回 IPv4 地址。"
-
-msgid "Can be useful if ISP has IPv6 nameservers but does not provide IPv6 routing."
-msgstr "如果 ISP 有 IPv6 名称服务器但不提供 IPv6 路由，则可能很有用。"
-
-msgid "Disable IPv4 DNS forwards"
-msgstr "禁止解析 IPv4 DNS 记录"
-
-msgid "Filter IPv4(A) DNS Query Name Resolve"
-msgstr "过滤掉 IPv4(A) ，只返回 IPv4 DNS 域名记录"
-
-msgid "Remove IPv4 addresses from the results and only return IPv6 addresses."
-msgstr "从结果中删除 IPv4 地址并仅返回 IPv6 地址。"
-
-msgid "Firewall (iptables)"
-msgstr "防火墙 (iptables)"
-
-msgid "Firewall (nftables)"
-msgstr "防火墙 (nftables)"
-
+msgid "NAS"
+msgstr "网络存储"

@@ -73,9 +73,9 @@ return view.extend({
 			p[i].value('ACCEPT', _('accept'));
 		}
 
-		if (L.hasSystemFeature('fullconenat')) {
+		if (L.hasSystemFeature('fullcone')) {
 			o = s.option(form.Flag, 'fullcone', _('Enable FullCone NAT'), _('Using FullCone NAT can improve gaming performance effectively'));
-			/* o = s.option(form.Flag, 'fullcone6', _('Enable FullCone NAT6')); */
+		}
 
 		if (L.hasSystemFeature('hnat')) {
 			o = s.option(form.Flag, 'hnat', _('MTK HNAT'), _('Requires MTK hardware NAT support. Implemented at least for mtk-ramips'));
