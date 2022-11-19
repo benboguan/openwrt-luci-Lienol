@@ -295,8 +295,8 @@ msgstr "使用 FullCone NAT 可有效提升游戏性能"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:182
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:230
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:164
-msgid "Enable FullCone-NAT"
-msgstr "启用 FullCone-NAT"
+msgid "Enable FullCone NAT"
+msgstr "启用 FullCone NAT"
 
 msgid "Enable FullCone NAT6"
 msgstr "启用 FullCone NAT6"
