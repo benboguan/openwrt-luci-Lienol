@@ -73,7 +73,7 @@ return view.extend({
 			p[i].value('ACCEPT', _('accept'));
 		}
 
-		if (L.hasSystemFeature('fullcone')) {
+		if (L.hasSystemFeature('fullconenat')) {
 			o = s.option(form.Flag, 'fullcone', _('Enable FullCone NAT'), _('Using FullCone NAT can improve gaming performance effectively'));
 		}
 

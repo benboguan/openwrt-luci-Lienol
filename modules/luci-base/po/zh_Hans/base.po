@@ -7886,7 +7886,7 @@ msgid "Disable IPv4 DNS forwards"
 msgstr "禁止解析 IPv4 DNS 记录"
 
 msgid "Filter IPv4(A) DNS Query Name Resolve"
-msgstr "过滤掉 IPv4(A) ，只返回 IPv4 DNS 域名记录"
+msgstr "过滤掉 IPv4(A) ，只返回 IPv6 DNS 域名记录"
 
 msgid "Remove IPv4 addresses from the results and only return IPv6 addresses."
 msgstr "从结果中删除 IPv4 地址并仅返回 IPv6 地址。"
