@@ -261,6 +261,9 @@ function display(pattern)
 			}, _('Remove…'));
 		}
 		else {
+			if (pkg.name.includes('luci-i18n'))
+			   continue;
+
 			var inst = packages.installed.pkgs[name];
 
 			ver = truncateVersion(pkg.version || '-');
@@ -998,8 +1001,8 @@ function updateLists(data)
 		    mount = L.toArray(data[0].filter(function(m) { return m.mount == '/' || m.mount == '/overlay' }))
 		    	.sort(function(a, b) { return a.mount > b.mount })[0] || { size: 0, free: 0 };
 
-		pg.firstElementChild.style.width = Math.floor(mount.size ? ((100 / mount.size) * mount.free) : 100) + '%';
-		pg.setAttribute('title', '%s (%.1024mB)'.format(pg.firstElementChild.style.width, mount.free));
+		pg.firstElementChild.style.width = Math.floor(mount.size ? ((100 / mount.size) * (mount.size-mount.free)) : 100) + '%';
+		pg.setAttribute('title', '%.1024mB / %.1024mB (%s)'.format((mount.size-mount.free), mount.size, pg.firstElementChild.style.width));
 
 		parseList(data[1], packages.available);
 		parseList(data[2], packages.installed);
@@ -1071,14 +1074,6 @@ return view.extend({
 				E('li', { 'data-mode': 'updates', 'class': 'installed cbi-tab-disabled', 'click': handleMode }, E('a', { 'href': '#' }, [ _('Updates') ]))
 			]),
 
-			E('div', { 'class': 'controls', 'style': 'display:none' }, [
-				E('div', { 'id': 'pager', 'class': 'center' }, [
-					E('button', { 'class': 'btn cbi-button-neutral prev', 'aria-label': _('Previous page'), 'click': handlePage }, [ '«' ]),
-					E('div', { 'class': 'text' }, [ 'dummy' ]),
-					E('button', { 'class': 'btn cbi-button-neutral next', 'aria-label': _('Next page'), 'click': handlePage }, [ '»' ])
-				])
-			]),
-
 			E('table', { 'id': 'packages', 'class': 'table' }, [
 				E('tr', { 'class': 'tr cbi-section-table-titles' }, [
 					E('th', { 'class': 'th col-2 left' }, [ _('Package name') ]),
@@ -1086,6 +1081,14 @@ return view.extend({
 					E('th', { 'class': 'th col-1 center size'}, [ _('Size (.ipk)') ]),
 					E('th', { 'class': 'th col-10 left' }, [ _('Description') ]),
 					E('th', { 'class': 'th right cbi-section-actions' }, [ '\u00a0' ])
+				])
+			]),
+			
+			E('div', { 'class': 'controls', 'style': 'display:none' }, [
+				E('div', { 'id': 'pager', 'class': 'center' }, [
+					E('button', { 'class': 'btn cbi-button-neutral prev', 'aria-label': _('Previous page'), 'click': handlePage }, [ '«' ]),
+					E('div', { 'class': 'text' }, [ 'dummy' ]),
+					E('button', { 'class': 'btn cbi-button-neutral next', 'aria-label': _('Next page'), 'click': handlePage }, [ '»' ])
 				])
 			])
 		]);
