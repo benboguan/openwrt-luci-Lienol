@@ -41,8 +41,8 @@
 		}
 	},
 
-	"admin/network": {
-		"title": "Network",
+	"admin/nas": {
+		"title": "NAS",
 		"order": 50,
 		"action": {
 			"type": "firstchild",
@@ -50,8 +50,8 @@
 		}
 	},
 
-	"admin/nas": {
-		"title": "NAS",
+	"admin/network": {
+		"title": "Network",
 		"order": 60,
 		"action": {
 			"type": "firstchild",

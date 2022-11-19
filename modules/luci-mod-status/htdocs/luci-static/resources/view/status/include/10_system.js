@@ -13,9 +13,24 @@ var callSystemInfo = rpc.declare({
 	method: 'info'
 });
 
+var callCPUBench = rpc.declare({
+	object: 'luci',
+	method: 'getCPUBench'
+});
+
 var callCPUInfo = rpc.declare({
 	object: 'luci',
 	method: 'getCPUInfo'
+});
+
+var callCPUUsage = rpc.declare({
+	object: 'luci',
+	method: 'getCPUUsage'
+});
+
+var callTempInfo = rpc.declare({
+	object: 'luci',
+	method: 'getTempInfo'
 });
 
 return baseclass.extend({
@@ -25,17 +40,22 @@ return baseclass.extend({
 		return Promise.all([
 			L.resolveDefault(callSystemBoard(), {}),
 			L.resolveDefault(callSystemInfo(), {}),
-			fs.lines('/usr/lib/lua/luci/version.lua'),
+			L.resolveDefault(callCPUBench(), {}),
 			L.resolveDefault(callCPUInfo(), {}),
+			L.resolveDefault(callCPUUsage(), {}),
+			L.resolveDefault(callTempInfo(), {}),
+			fs.lines('/usr/lib/lua/luci/version.lua')
 		]);
 	},
 
 	render: function(data) {
 		var boardinfo   = data[0],
 		    systeminfo  = data[1],
-		    luciversion = data[2];
-			
-		var cpuinfo = data[3];
+		    cpubench    = data[2],
+		    cpuinfo     = data[3],
+		    cpuusage    = data[4],
+		    tempinfo    = data[5],
+		    luciversion = data[6];
 
 		luciversion = luciversion.filter(function(l) {
 			return l.match(/^\s*(luciname|luciversion)\s*=/);
@@ -60,9 +80,6 @@ return baseclass.extend({
 
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
-			_('Model'),            boardinfo.model,
-			//_('Architecture'),     boardinfo.system,
-			_((cpuinfo && cpuinfo.result) ? 'CPU Info' : 'Architecture'),     (cpuinfo && cpuinfo.result) ? cpuinfo.result : boardinfo.system,
 			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + ' / ' : '') + (luciversion || ''),
 			_('Kernel Version'),   boardinfo.kernel,
@@ -74,6 +91,24 @@ return baseclass.extend({
 				systeminfo.load[2] / 65535.0
 			) : null
 		];
+
+		if (tempinfo.tempinfo) {
+			fields.splice(6, 0, _('Temperature'));
+			fields.splice(7, 0, tempinfo.tempinfo);
+		}
+		if (boardinfo.model == "Default string Default string") {
+			if (cpuinfo.cpuinfo) {
+			fields.splice(2, 0, _('Architecture'));
+			fields.splice(3, 0, cpuinfo.cpuinfo + cpubench.cpubench);
+			}
+		} else {
+			fields.splice(2, 0, _('Model'));
+			fields.splice(3, 0, boardinfo.model + cpubench.cpubench);
+			if (cpuinfo.cpuinfo) {
+			fields.splice(4, 0, _('Architecture'));
+			fields.splice(5, 0, cpuinfo.cpuinfo);
+			}
+		}
 
 		var table = E('table', { 'class': 'table' });
 
